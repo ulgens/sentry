@@ -1,8 +1,10 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.13"
 resolution-markers = [
-    "sys_platform == 'darwin' or sys_platform == 'linux'",
+    "(python_full_version >= '3.15' and sys_platform == 'darwin') or (python_full_version >= '3.15' and sys_platform == 'linux')",
+    "(python_full_version == '3.14.*' and sys_platform == 'darwin') or (python_full_version == '3.14.*' and sys_platform == 'linux')",
+    "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')",
 ]
 supported-markers = [
     "sys_platform == 'darwin' or sys_platform == 'linux'",
@@ -10,57 +12,66 @@ supported-markers = [
 
 [[package]]
 name = "anyio"
-version = "3.7.1"
+version = "4.12.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "idna", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "sniffio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/anyio-3.7.1-py3-none-any.whl", hash = "sha256:91dee416e570e92c64041bd18b900d1d6fa78dff7048769ce5ac5ddad004fbb5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/anyio-4.12.1-py3-none-any.whl", hash = "sha256:d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c" },
 ]
 
 [[package]]
 name = "asgiref"
-version = "3.8.1"
+version = "3.11.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/asgiref-3.8.1-py3-none-any.whl", hash = "sha256:3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/asgiref-3.11.1-py3-none-any.whl", hash = "sha256:e8667a091e69529631969fd45dc268fa79b99c92c5fcdda727757e52146ec133" },
+]
+
+[[package]]
+name = "ast-serialize"
+version = "0.3.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/ast_serialize-0.3.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:ef6d3c08b7b4cd29b48410338e134764a00e76d25841eb02c1084e868c888ecc" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/ast_serialize-0.3.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3d841424f41b886e98044abc80769c14a956e6e5ccd5fb5b0d9f5ead72be18a4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/ast_serialize-0.3.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c1c9e763d70293d65ce1e1ea8c943140c68d0953f0268c7ee0998f2e07f77dd0" },
 ]
 
 [[package]]
 name = "attrs"
-version = "24.2.0"
+version = "26.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/attrs-24.2.0-py3-none-any.whl", hash = "sha256:81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/attrs-26.1.0-py3-none-any.whl", hash = "sha256:c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309" },
 ]
 
 [[package]]
 name = "avalara"
-version = "20.9.0"
+version = "22.8.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/Avalara-20.9.0-py3-none-any.whl", hash = "sha256:8b5afdaf8795d5c72fbe8e07f622c5df6f83bb226c6f498198a9c4428783ef3a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/Avalara-22.8.0-py3-none-any.whl", hash = "sha256:2c79e9c4c2d6e3a2028f8546ba14d84e519f3a8d7696d901ed6a2034a8191c89" },
 ]
 
 [[package]]
 name = "beautifulsoup4"
-version = "4.7.1"
+version = "4.11.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "soupsieve", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/beautifulsoup4-4.7.1-py3-none-any.whl", hash = "sha256:034740f6cb549b4e932ae1ab975581e6103ac8f942200a0e9759065984391858" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/beautifulsoup4-4.11.1-py3-none-any.whl", hash = "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30" },
 ]
 
 [[package]]
 name = "black"
-version = "25.1.0"
+version = "26.3.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "click", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -68,12 +79,14 @@ dependencies = [
     { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pathspec", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "platformdirs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pytokens", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/black-25.1.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:8f0b18a02996a836cc9c9c78e5babec10930862827b1b724ddfe98ccf2f2fe4f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/black-25.1.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:afebb7098bfbc70037a053b91ae8437c3857482d3a690fefc03e9ff7aa9a5fd3" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/black-25.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:030b9759066a4ee5e5aca28c3c77f9c64789cdd4de8ac1df642c40b708be6171" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/black-25.1.0-py3-none-any.whl", hash = "sha256:95e8176dae143ba9097f351d174fdaf0ccd29efb414b362ae3fd72bf0f710717" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/black-26.3.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8a33d657f3276328ce00e4d37fe70361e1ec7614da5d7b6e78de5426cb56332f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/black-26.3.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:f1cd08e99d2f9317292a311dfe578fd2a24b15dbce97792f9c4d752275c1fa56" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/black-26.3.1-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:f89f2ab047c76a9c03f78d0d66ca519e389519902fa27e7a91117ef7611c0568" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/black-26.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:b07fc0dab849d24a80a29cfab8d8a19187d1c4685d8a5e6385a5ce323c1f015f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/black-26.3.1-py3-none-any.whl", hash = "sha256:2bd5aa94fc267d38bb21a70d7410a89f1a1d318841855f698746f8e7f51acd1b" },
 ]
 
 [[package]]
@@ -104,101 +117,102 @@ wheels = [
 
 [[package]]
 name = "brotli"
-version = "1.1.0"
+version = "1.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/Brotli-1.1.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:8bf32b98b75c13ec7cf774164172683d6e7891088f6316e54425fde1efc276d5" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/Brotli-1.1.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:7bc37c4d6b87fb1017ea28c9508b36bbcb0c3d18b4260fcdf08b200c74a6aee8" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/Brotli-1.1.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3c0ef38c7a7014ffac184db9e04debe495d317cc9c6fb10071f7fefd93100a4f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/Brotli-1.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a93dde851926f4f2678e704fadeb39e16c35d8baebd5252c9fd94ce8ce68c4a0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:9e5825ba2c9998375530504578fd4d5d1059d09621a02065d1b6bfc41a8e05ab" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:c8565e3cdc1808b1a34714b553b262c5de5fbda202285782173ec137fd13709f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:67a91c5187e1eec76a61625c77a6c8c785650f5b576ca732bd33ef58b0dff49c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp314-cp314-macosx_10_15_universal2.whl", hash = "sha256:6c12dad5cd04530323e723787ff762bac749a7b256a5bece32b2243dd5c27b21" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:963a08f3bebd8b75ac57661045402da15991468a621f014be54e50f53a58d19e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/brotli-1.2.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:cf9cba6f5b78a2071ec6fb1e7bd39acf35071d90a81231d67e92d637776a6a63" },
 ]
 
 [[package]]
 name = "build"
-version = "0.8.0"
+version = "1.4.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "pep517", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pyproject-hooks", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/build-0.8.0-py3-none-any.whl", hash = "sha256:19b0ed489f92ace6947698c3ca8436cb0556a66e2aa2d34cd70e2a5d27cd0437" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/build-1.4.0-py3-none-any.whl", hash = "sha256:6a07c1b8eb6f2b311b96fcbdbce5dab5fe637ffda0fd83c9cac622e927501596" },
 ]
 
 [[package]]
 name = "cachetools"
-version = "5.3.0"
+version = "6.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/cachetools-5.3.0-py3-none-any.whl", hash = "sha256:429e1a1e845c008ea6c85aa35d4b98b65d6a9763eeef3e37e92728a12d1de9d4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cachetools-6.2.0-py3-none-any.whl", hash = "sha256:1c76a8960c0041fcc21097e357f882197c79da0dbff766e7317890a65d7d8ba6" },
 ]
 
 [[package]]
 name = "certifi"
-version = "2024.7.4"
+version = "2026.4.22"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/certifi-2024.7.4-py3-none-any.whl", hash = "sha256:c198e21b1289c2ab85ee4e67bb4b4ef3ead0892059901a8d5b622f24a1101e90" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/certifi-2026.4.22-py3-none-any.whl", hash = "sha256:3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a" },
 ]
 
 [[package]]
 name = "cffi"
-version = "1.17.1"
+version = "2.0.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "pycparser", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pycparser", marker = "(implementation_name != 'PyPy' and sys_platform == 'darwin') or (implementation_name != 'PyPy' and sys_platform == 'linux')" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-1.17.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:f3a2b4222ce6b60e2e8b337bb9596923045681d71e5a082783484d845390938e" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-1.17.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0984a4925a435b1da406122d4d7968dd861c1385afe3b45ba82b750f229811e2" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-1.17.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:706510fe141c86a69c8ddc029c7910003a17353970cff3b904ff0686a5927683" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-1.17.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dd398dbc6773384a17fe0d3e7eeb8d1a21c2200473ee6806bb5e6a8e62bb73dd" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:00bdf7acc5f795150faa6957054fbbca2439db2f775ce831222b66f192f03beb" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:45d5e886156860dc35862657e1494b9bae8dfa63bf56796f2fb56e1679fc0bca" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:d48a880098c96020b02d5a1f7d9251308510ce8858940e6fa99ece33f610838b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:c8d3b5532fc71b7a77c09192b4a5a200ea992702734a2e9279a37f2478236f26" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:c654de545946e0db659b3400168c9ad31b5d29593291482c43e3564effbcee13" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:24b6f81f1983e6df8db3adc38562c83f7d4a0c36162885ec7f7b77c7dcbec97b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cffi-2.0.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:afb8db5439b81cf9c9d0c80404b60c3cc9c3add93e114dcae767f1477cb53775" },
 ]
 
 [[package]]
 name = "cfgv"
-version = "3.3.1"
+version = "3.4.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/cfgv-3.3.1-py2.py3-none-any.whl", hash = "sha256:c6a0883f3917a037485059700b9e75da2464e6c27051014ad85ba6aaa5884426" },
-]
-
-[[package]]
-name = "chardet"
-version = "5.2.0"
-source = { registry = "https://pypi.devinfra.sentry.io/simple" }
-wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/chardet-5.2.0-py3-none-any.whl", hash = "sha256:e1cf59446890a00105fe7b7912492ea04b6e6f06d4b742b2c788469e34c82970" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cfgv-3.4.0-py2.py3-none-any.whl", hash = "sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9" },
 ]
 
 [[package]]
 name = "charset-normalizer"
-version = "3.4.0"
+version = "3.4.7"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e9e3c4c9e1ed40ea53acf11e2a386383c3304212c965773704e4603d589343ed" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:92a7e36b000bf022ef3dbb9c46bfe2d52c047d5e3f3343f43204263c5addc250" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:54b6a92d009cbe2fb11054ba694bc9e284dad30a26757b1e372a1fdddaf21920" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4796efc4faf6b53a18e3d46343535caed491776a22af773f366534056c4e1fbc" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:f496c9c3cc02230093d8330875c4c3cdfc3b73612a5fd921c65d39cbcef08063" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:0ea948db76d31190bf08bd371623927ee1339d5f2a0b4b1b4a4439a65298703c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:e044c39e41b92c845bc815e5ae4230804e8e7bc29e399b0437d64222d92809dd" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp314-cp314-macosx_10_15_universal2.whl", hash = "sha256:c36c333c39be2dbca264d7803333c896ab8fa7d4d6f0ab7edb7dfd7aea6e98c0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1c2aed2e5e41f24ea8ef1590b8e848a79b56f3a5564a65ceec43c9d692dc7d8a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/charset_normalizer-3.4.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:bd6c2a1c7573c64738d716488d2cdd3c00e340e4835707d8fdb8dc1a66ef164e" },
 ]
 
 [[package]]
 name = "click"
-version = "8.2.1"
+version = "8.4.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/click-8.2.1-py3-none-any.whl", hash = "sha256:61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/click-8.4.1-py3-none-any.whl", hash = "sha256:482be17c6991b8c19c5429a1e995d9b0efdbb63172824c41f99965dc0ade8ec2" },
 ]
 
 [[package]]
 name = "confluent-kafka"
-version = "2.8.0"
+version = "2.13.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.8.0-cp313-cp313-macosx_13_0_arm64.whl", hash = "sha256:dd3bc67d589dd486d128a159e918ecf3765f8154474edf9f6f701f701de735a1" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.8.0-cp313-cp313-macosx_13_0_x86_64.whl", hash = "sha256:4c0e655df9faef450654700db3fda163ddbc4b68f5bf5c7633cf1bf9d932d892" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.8.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:abff7c4853e2d118563229329ca0a1f148ee5004cbcb9a8dad9dc8e796fcc477" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.8.0-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:e75230b51456de5cfaefe94c35f3de5101864d8c21518f114d5cd9dd1d7d43b1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp313-cp313-macosx_13_0_arm64.whl", hash = "sha256:02702808dd3cfd91f117fbf17181da2a95392967e9f946b1cbdc5589b36e39d1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:f3e6d010ad38447a48e0f9fab81edd4d2fd0b5f5a79ab475c30347689e35c6e6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:9161865d8246eb77d1c30233a315bdad96145af783981877664532fa212f56be" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp314-cp314-macosx_13_0_arm64.whl", hash = "sha256:9cb0d6820107deca1823d68b96831bd982d0a11c4e6bcf0a12e8040192c48a8f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp314-cp314-manylinux_2_28_aarch64.whl", hash = "sha256:f09adb42fb898a0b3a88b02e77bee472e93f758258945386c77864016b4e4efc" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/confluent_kafka-2.13.2-cp314-cp314-manylinux_2_28_x86_64.whl", hash = "sha256:fa3be1fe231e06b2c7501fa3641b30ea90ea17be79ca89806eef22ff34ed106c" },
 ]
 
 [[package]]
@@ -221,6 +235,9 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:b0ac3d42cb51c4b12df9c5f0dd2f13a4f24f01943627120ec4d293c9181219ba" },
     { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f8fe4984b431f8621ca53d9380901f62bfb54ff759a1348cd140490ada7b693c" },
     { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dacbc52de979f2823a819571f2e3a350a7e36b8cb7484cdb1e289bceaf35305f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:195bb15106367d53b0568a0f5cdf6e3b90ab60a618bcc52769585d5384941021" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:4ba20745bbafc23169ddbac67751686f5c062e843482c00d12bce78229f91832" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/coverage-7.6.4-cp314-cp314-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:62d663523d03014e6215fcc04ccdc843bb7c4d05eda4720972128f3b83885fb9" },
 ]
 
 [[package]]
@@ -233,23 +250,23 @@ wheels = [
 
 [[package]]
 name = "cryptography"
-version = "44.0.1"
+version = "47.0.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "cffi", marker = "(platform_python_implementation != 'PyPy' and sys_platform == 'darwin') or (platform_python_implementation != 'PyPy' and sys_platform == 'linux')" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-44.0.1-cp39-abi3-macosx_10_9_universal2.whl", hash = "sha256:a2d8a7045e1ab9b9f803f0d9531ead85f90c5f2859e653b61497228b18452008" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-44.0.1-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:436df4f203482f41aad60ed1813811ac4ab102765ecae7a2bbb1dbb66dcff5a7" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-44.0.1-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:72198e2b5925155497a5a3e8c216c7fb3e64c16ccee11f0e7da272fa93b35c4c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-47.0.0-cp311-abi3-macosx_10_9_universal2.whl", hash = "sha256:160ad728f128972d362e714054f6ba0067cab7fb350c5202a9ae8ae4ce3ef1a0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-47.0.0-cp311-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:9c59ab0e0fa3a180a5a9c59f3a5abe3ef90d474bc56d7fadfbe80359491b615b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cryptography-47.0.0-cp311-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:0024b87d47ae2399165a6bfb20d24888881eeab83ae2566d62467c5ff0030ce7" },
 ]
 
 [[package]]
 name = "cssselect"
-version = "1.0.3"
+version = "1.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/cssselect-1.0.3-py2.py3-none-any.whl", hash = "sha256:3b5103e8789da9e936a68d993b70df732d06b8bb9a337a05ed4eb52c17ef7206" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/cssselect-1.2.0-py2.py3-none-any.whl", hash = "sha256:da1885f0c10b60c03ed5eccbb6b68d6eff248d91976fcde348f395d54c9fd35e" },
 ]
 
 [[package]]
@@ -262,18 +279,18 @@ wheels = [
 
 [[package]]
 name = "datadog"
-version = "0.49.1"
+version = "0.52.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/datadog-0.49.1-py2.py3-none-any.whl", hash = "sha256:4a56d57490ea699a0dfd9253547485a57b4120e93489defadcf95c66272374d6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/datadog-0.52.1-py2.py3-none-any.whl", hash = "sha256:b8c92cd761618ee062f114171067e4c400d48c9f0dad16cb285042439d9d5d4e" },
 ]
 
 [[package]]
 name = "devservices"
-version = "1.2.4"
+version = "1.4.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -283,35 +300,35 @@ dependencies = [
     { name = "supervisor", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/devservices-1.2.4-py3-none-any.whl", hash = "sha256:637055d5dae3dd01899ba066d511aa14537d791ed7f997292bc6a72dd5ddf416" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/devservices-1.4.1-py3-none-any.whl", hash = "sha256:911f0ac0a489e2b66830eb69074814274a570e258646358adafdf1dedf2671e8" },
 ]
 
 [[package]]
 name = "distlib"
-version = "0.3.8"
+version = "0.4.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/distlib-0.3.8-py2.py3-none-any.whl", hash = "sha256:034db59a0b96f8ca18035f36290806a9a6e6bd9d1ff91e45a7f172eb17e51784" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/distlib-0.4.0-py2.py3-none-any.whl", hash = "sha256:9659f7d87e46584a30b5780e43ac7a2143098441670ff0a49d5f9034c54a6c16" },
 ]
 
 [[package]]
 name = "distro"
-version = "1.8.0"
+version = "1.9.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/distro-1.8.0-py3-none-any.whl", hash = "sha256:99522ca3e365cac527b44bde033f64c6945d90eb9f769703caaec52b09bbd3ff" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/distro-1.9.0-py3-none-any.whl", hash = "sha256:7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2" },
 ]
 
 [[package]]
 name = "django"
-version = "5.2.8"
+version = "5.2.14"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "asgiref", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "sqlparse", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/django-5.2.8-py3-none-any.whl", hash = "sha256:37e687f7bd73ddf043e2b6b97cfe02fcbb11f2dbb3adccc6a2b18c6daa054d7f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/django-5.2.14-py3-none-any.whl", hash = "sha256:6f712143bd3064310d1f50fac859c3e9a274bdcfc9595339853be7779297fc76" },
 ]
 
 [[package]]
@@ -346,14 +363,14 @@ wheels = [
 
 [[package]]
 name = "django-stubs-ext"
-version = "5.2.2"
+version = "5.2.9"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "django", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/django_stubs_ext-5.2.2-py3-none-any.whl", hash = "sha256:8833bbe32405a2a0ce168d3f75a87168f61bd16939caf0e8bf173bccbd8a44c5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/django_stubs_ext-5.2.9-py3-none-any.whl", hash = "sha256:230c51575551b0165be40177f0f6805f1e3ebf799b835c85f5d64c371ca6cf71" },
 ]
 
 [[package]]
@@ -405,18 +422,18 @@ wheels = [
 
 [[package]]
 name = "execnet"
-version = "1.9.0"
+version = "2.0.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/execnet-1.9.0-py2.py3-none-any.whl", hash = "sha256:a295f7cc774947aac58dde7fdc85f4aa00c42adf5d8f5468fc630c1acf30a142" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/execnet-2.0.2-py3-none-any.whl", hash = "sha256:88256416ae766bc9e8895c76a87928c0012183da3cc4fc18016e6f050e025f41" },
 ]
 
 [[package]]
 name = "fastjsonschema"
-version = "2.16.2"
+version = "2.21.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/fastjsonschema-2.16.2-py3-none-any.whl", hash = "sha256:21f918e8d9a1a4ba9c22e09574ba72267a6762d47822db9add95f6454e51cc1c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/fastjsonschema-2.21.2-py3-none-any.whl", hash = "sha256:1c797122d0a86c5cace2e54bf4e819c36223b552017172f32c5c024a6b77e463" },
 ]
 
 [[package]]
@@ -433,10 +450,10 @@ wheels = [
 
 [[package]]
 name = "filelock"
-version = "3.13.1"
+version = "3.20.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/filelock-3.13.1-py3-none-any.whl", hash = "sha256:57dbda9b35157b05fb3e58ee91448612eb674172fab98ee235ccb0b5bee19a1c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/filelock-3.20.3-py3-none-any.whl", hash = "sha256:4b0dda527ee31078689fc205ec4f1c1bf7d56cf88b6dc9426c4f230e46c2dce1" },
 ]
 
 [[package]]
@@ -462,14 +479,14 @@ wheels = [
 
 [[package]]
 name = "flake8-bugbear"
-version = "22.10.27"
+version = "23.12.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "attrs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "flake8", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/flake8_bugbear-22.10.27-py3-none-any.whl", hash = "sha256:6ad0ab754507319060695e2f2be80e6d8977cfcea082293089a9226276bd825d" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/flake8_bugbear-23.12.2-py3-none-any.whl", hash = "sha256:83324bad4d90fee4bf64dd69c61aff94debf8073fbd807c8b6a36eec7a2f0719" },
 ]
 
 [[package]]
@@ -493,44 +510,72 @@ wheels = [
 
 [[package]]
 name = "google-api-core"
-version = "2.19.1"
+version = "2.25.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+resolution-markers = [
+    "(python_full_version >= '3.15' and sys_platform == 'darwin') or (python_full_version >= '3.15' and sys_platform == 'linux')",
+    "(python_full_version == '3.14.*' and sys_platform == 'darwin') or (python_full_version == '3.14.*' and sys_platform == 'linux')",
+]
 dependencies = [
-    { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "googleapis-common-protos", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-auth", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "googleapis-common-protos", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "proto-plus", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "protobuf", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "requests", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_api_core-2.19.1-py3-none-any.whl", hash = "sha256:f12a9b8309b5e21d92483bbd47ce2c445861ec7d269ef6784ecc0ea8c1fa6125" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_api_core-2.25.1-py3-none-any.whl", hash = "sha256:8a2a56c1fef82987a524371f99f3bd0143702fecc670c72e600c1cda6bf8dbb7" },
 ]
 
 [package.optional-dependencies]
 grpc = [
-    { name = "grpcio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "grpcio-status", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "grpcio", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "grpcio-status", marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+]
+
+[[package]]
+name = "google-api-core"
+version = "2.30.3"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+resolution-markers = [
+    "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')",
+]
+dependencies = [
+    { name = "google-auth", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+    { name = "googleapis-common-protos", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+    { name = "proto-plus", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+    { name = "protobuf", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+    { name = "requests", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_api_core-2.30.3-py3-none-any.whl", hash = "sha256:a85761ba72c444dad5d611c2220633480b2b6be2521eca69cca2dbb3ffd6bfe8" },
+]
+
+[package.optional-dependencies]
+grpc = [
+    { name = "grpcio", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
+    { name = "grpcio-status", marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
 ]
 
 [[package]]
 name = "google-auth"
-version = "2.29.0"
+version = "2.50.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "cachetools", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "cryptography", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pyasn1-modules", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "rsa", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_auth-2.29.0-py2.py3-none-any.whl", hash = "sha256:d452ad095688cd52bae0ad6fafe027f6a6d6f560e810fec20914e17a09526415" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_auth-2.50.0-py3-none-any.whl", hash = "sha256:04382175e28b94f49694977f0a792688b59a668def1499e9d8de996dc9ce5b15" },
 ]
 
 [[package]]
 name = "google-cloud-bigtable"
-version = "2.30.1"
+version = "2.31.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-cloud-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-crc32c", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -539,105 +584,115 @@ dependencies = [
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_bigtable-2.30.1-py3-none-any.whl", hash = "sha256:0994823a8e64a5df085ac6cc978edf025496c4e7bbbd02b216cea57a39cb00f4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_bigtable-2.31.0-py3-none-any.whl", hash = "sha256:80c812a33aa22dfb32b6ab1af624921bb97bc6c82336906c1a2c368aefbdc21b" },
 ]
 
 [[package]]
 name = "google-cloud-build"
-version = "3.24.2"
+version = "3.31.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpc-google-iam-v1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_build-3.24.2-py2.py3-none-any.whl", hash = "sha256:03360b6f92988f49de9e8bc74a381ab59934c353de6ece912493419626c4afd4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_build-3.31.2-py3-none-any.whl", hash = "sha256:1b85eb70748d49b8c4fde0e48519f6d69f5bb806c0d810d364a5e3c0423e0050" },
 ]
 
 [[package]]
 name = "google-cloud-core"
-version = "2.4.1"
+version = "2.5.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_core-2.4.1-py2.py3-none-any.whl", hash = "sha256:a9e6a4422b9ac5c29f79a0ede9485473338e2ce78d91f2370c01e730eab22e61" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_core-2.5.1-py3-none-any.whl", hash = "sha256:ea62cdf502c20e3e14be8a32c05ed02113d7bef454e40ff3fab6fe1ec9f1f4e7" },
 ]
 
 [[package]]
 name = "google-cloud-functions"
-version = "1.17.0"
+version = "1.20.4"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpc-google-iam-v1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_functions-1.17.0-py2.py3-none-any.whl", hash = "sha256:300d24dae66e5a81eb778c862d432f1128e445c6dadbf9ce9ea1a9a45a4c4038" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_functions-1.20.4-py3-none-any.whl", hash = "sha256:488db844e3ec41185f123336a8eef8083fb48e01d686d3a18727a2241e9a7f69" },
 ]
 
 [[package]]
 name = "google-cloud-kms"
-version = "2.24.2"
+version = "3.5.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpc-google-iam-v1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_kms-2.24.2-py2.py3-none-any.whl", hash = "sha256:368209b035dfac691a467c1cf50986d8b1b26cac1166bdfbaa25d738df91ff7b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_kms-3.5.1-py3-none-any.whl", hash = "sha256:11dc9a1b4edcc6794c5fee7e4e7dbd14b051bde99f4702bd70fec193d152abdc" },
 ]
 
 [[package]]
 name = "google-cloud-pubsub"
-version = "2.23.0"
+version = "2.31.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpc-google-iam-v1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpcio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpcio-status", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "opentelemetry-api", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "opentelemetry-sdk", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_pubsub-2.23.0-py2.py3-none-any.whl", hash = "sha256:d341b2df8b105d0e3774b4bc9173bc0cf26bced31a4736cd9eefa33453b75dff" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_pubsub-2.31.0-py3-none-any.whl", hash = "sha256:2dbae4ef079403615856868f8bae20550eb25c0f89396a185ce2c72b029fb060" },
 ]
 
 [[package]]
 name = "google-cloud-spanner"
-version = "3.49.0"
+version = "3.55.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-cloud-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "grpc-google-iam-v1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "grpc-interceptor", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "sqlparse", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_spanner-3.49.0-py2.py3-none-any.whl", hash = "sha256:8d266ade471c1370389c5554fbe8f63d95e4a15df3a26b55d02994927beee6b4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_spanner-3.55.0-py3-none-any.whl", hash = "sha256:fc9f717b612924f5e9bfae9514aa0d5cd30e6b40e8d472d030f84b16de2c18fe" },
 ]
 
 [[package]]
 name = "google-cloud-storage"
-version = "2.18.0"
+version = "3.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-cloud-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-crc32c", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -645,7 +700,7 @@ dependencies = [
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_storage-2.18.0-py2.py3-none-any.whl", hash = "sha256:e8e1a9577952143c3fca8163005ecfadd2d70ec080fa158a8b305000e2c22fbb" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_cloud_storage-3.2.0-py3-none-any.whl", hash = "sha256:ff7a9a49666954a7c3d1598291220c72d3b9e49d9dfcf9dfaecb301fc4fb0b24" },
 ]
 
 [[package]]
@@ -653,7 +708,8 @@ name = "google-cloud-storage-transfer"
 version = "1.17.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, extra = ["grpc"], marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "proto-plus", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -664,35 +720,37 @@ wheels = [
 
 [[package]]
 name = "google-crc32c"
-version = "1.6.0"
+version = "1.8.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.6.0-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:59b47389a7430f3b67f71fade2d625abd2e31674e54adc7797cdfc89224f01dc" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.6.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:37e9126c083345f27a86c606168c96a10f4385a57079274fc7c9e59140ee4703" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.6.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:c07c8e51d3d79c06ccc71cda8ba463a7a0f5f3b97088b02ab09a1107e40fd8db" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.6.0-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:651a890f3d56b51b6bcbf0620b64ce6648fcd684e03240609bb6edc2055d11f1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:3ebb04528e83b2634857f43f9bb8ef5b2bbe7f10f140daeb01b58f972d04736b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:3b9776774b24ba76831609ffbabce8cdf6fa2bd5e9df37b594221c7e333a81fa" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:89c17d53d75562edfff86679244830599ee0a48efc216200691de8b02ab6b2b8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp314-cp314-macosx_12_0_arm64.whl", hash = "sha256:e6584b12cb06796d285d09e33f63309a09368b9d806a551d8036a4207ea43697" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp314-cp314-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:b0d1a7afc6e8e4635564ba8aa5c0548e3173e41b6384d7711a9123165f582de2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_crc32c-1.8.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:8b3f68782f3cbd1bce027e48768293072813469af6a61a86f6bb4977a4380f21" },
 ]
 
 [[package]]
 name = "google-resumable-media"
-version = "2.7.0"
+version = "2.8.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "google-crc32c", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/google_resumable_media-2.7.0-py2.py3-none-any.whl", hash = "sha256:79543cfe433b63fd81c0844b7803aba1bb8950b47bedf7d980c38fa123937e08" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/google_resumable_media-2.8.2-py3-none-any.whl", hash = "sha256:82b6d8ccd11765268cdd2a2123f417ec806b8eef3000a9a38dfe3033da5fb220" },
 ]
 
 [[package]]
 name = "googleapis-common-protos"
-version = "1.63.2"
+version = "1.74.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/googleapis_common_protos-1.63.2-py2.py3-none-any.whl", hash = "sha256:27a2499c7e8aff199665b22741997e485eccc8645aa9176c7c988e6fae507945" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/googleapis_common_protos-1.74.0-py3-none-any.whl", hash = "sha256:702216f78610bb510e3f12ac3cafd281b7ac45cc5d86e90ad87e4d301a3426b5" },
 ]
 
 [package.optional-dependencies]
@@ -702,15 +760,18 @@ grpc = [
 
 [[package]]
 name = "granian"
-version = "2.6.0"
+version = "2.7.6"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "click", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.6.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:f4e0e925d016e3dc43ae5950021c9ea0e9ee2ef1334a76ba7fbb80cc9e17c044" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.6.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7c032dca04171e4fbd54e587fe03aeef1825739d02ff3e3c49d578a8b5cc752c" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.6.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:d5686da7358fede8e9a1e1344310c6e3cb2c4d02a1aca52c31c990fe6b7d6281" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:2079df78961f5bb0032ee86463fd0305f2c62469c7ea9207439c237729440d27" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:20d6e64c449025074f056ad86b0e16ea4a48ec2745596fa084c995ba514dd64b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:425156ebaa2ad7215f7522501487fa4d676d0f04cde40a987732df4646b9266d" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:0ba744daf241cdb52abf7ff1a5e3d53b04d470d4166880789ccfe3605cee5d52" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3fa6ebbad188f581f264f5b4f2e1bb2f3fa3b8b830d66703b225b4bc3ad9302a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/granian-2.7.6-cp314-cp314-manylinux_2_28_aarch64.whl", hash = "sha256:76a4f7ddacee73cf3c8baa06ebfcea1e591185687c45cdae6df7992578135f58" },
 ]
 
 [package.optional-dependencies]
@@ -720,7 +781,7 @@ pname = [
 
 [[package]]
 name = "grpc-google-iam-v1"
-version = "0.13.1"
+version = "0.14.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "googleapis-common-protos", extra = ["grpc"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -728,28 +789,45 @@ dependencies = [
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/grpc_google_iam_v1-0.13.1-py2.py3-none-any.whl", hash = "sha256:c3e86151a981811f30d5e7330f271cee53e73bb87755e88cc3b6f0c7b5fe374e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpc_google_iam_v1-0.14.2-py3-none-any.whl", hash = "sha256:a3171468459770907926d56a440b2bb643eec1d7ba215f48f3ecece42b4d8351" },
 ]
 
 [[package]]
-name = "grpc-stubs"
-version = "1.53.0.5"
+name = "grpc-interceptor"
+version = "0.15.4"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "grpcio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/grpc_stubs-1.53.0.5-py3-none-any.whl", hash = "sha256:04183fb65a1b166a1febb9627e3d9647d3926ccc2dfe049fe7b6af243428dbe1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpc_interceptor-0.15.4-py3-none-any.whl", hash = "sha256:0035f33228693ed3767ee49d937bac424318db173fef4d2d0170b3215f254d9d" },
+]
+
+[[package]]
+name = "grpc-stubs"
+version = "1.53.0.6"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "grpcio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpc_stubs-1.53.0.6-py3-none-any.whl", hash = "sha256:3ffc5a6b5bd84ac46f3d84e2434e97936c1262b47b71b462bdedc43caaf227e1" },
 ]
 
 [[package]]
 name = "grpcio"
-version = "1.67.0"
+version = "1.80.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.67.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:42199e704095b62688998c2d84c89e59a26a7d5d32eed86d43dc90e7a3bd04aa" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.67.0-cp313-cp313-manylinux_2_17_aarch64.whl", hash = "sha256:c4c425f440fb81f8d0237c07b9322fc0fb6ee2b29fbef5f62a322ff8fcce240d" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.67.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:662c8e105c5e5cee0317d500eb186ed7a93229586e431c1bf0c9236c2407352c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp313-cp313-macosx_11_0_universal2.whl", hash = "sha256:92d787312e613754d4d8b9ca6d3297e69994a7912a32fa38c4c4e01c272974b0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:8ac393b58aa16991a2f1144ec578084d544038c12242da3a215966b512904d0f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:873ff5d17d68992ef6605330127425d2fc4e77e612fa3c3e0ed4e668685e3140" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp314-cp314-macosx_11_0_universal2.whl", hash = "sha256:d8e11f167935b3eb089ac9038e1a063e6d7dbe995c0bb4a661e614583352e76f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:f14b618fc30de822681ee986cfdcc2d9327229dc4c98aed16896761cacd468b9" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/grpcio-1.80.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:2dcc70e9f0ba987526e8e8603a610fb4f460e42899e74e7a518bf3c68fe1bf05" },
 ]
 
 [[package]]
@@ -775,14 +853,14 @@ wheels = [
 
 [[package]]
 name = "h2"
-version = "4.2.0"
+version = "4.3.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "hpack", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "hyperframe", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/h2-4.2.0-py3-none-any.whl", hash = "sha256:479a53ad425bb29af087f3458a61d30780bc818e4ebcf01f0b536ba916462ed0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/h2-4.3.0-py3-none-any.whl", hash = "sha256:c438f029a25f7945c69e0ccf0fb951dc3f73a5f6412981daee861431b70e2bdd" },
 ]
 
 [[package]]
@@ -798,13 +876,16 @@ wheels = [
 
 [[package]]
 name = "hiredis"
-version = "2.3.2"
+version = "3.0.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-2.3.2-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:a3640c17aebafa29cf64dd917b21d4fdf353e09fecb6826de7e33d55707c590b" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-2.3.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:353e2f99f4c70188d9c588a909da525d59909da0e4e26e6f7f8f087a2baea6d6" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-2.3.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:62168d8ac203024c45ed71afaa3d7ca385c78f4b1dac577b69cada0f4c2fd51f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-2.3.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c885fdb3252ea88f1de1b8e1c64d26e70aaf4a0962d4841f2896ee05a7e8bdf5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:91f6a482874718fb01f25dec67f0b46ca235d7f994fd48f07bfaf1570b8edfab" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:5eb68091500818d45322216ac4a8f157e99ad928f436c4964983715ae379b59f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:4802c3c84a2a3cc68b0e322febaa0680589562b16948aada5d8848679adf861e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:dc97b556eee75e44ad13346921091c87249d16f5efca8973d4cc36956a6437ee" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:f598e80ce65f42939c86660a7d5d06595adc2f36d380c3b0d32b48c9f80e8b27" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:8283cfc9afbfa11dffa002074ddac10a14a9a40d8bf392c07c5d592253e676a7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/hiredis-3.0.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:e89cac552e028c74ac05406ac3709ce33c7a9fbfb8278c98093f6fd3c0bcbd88" },
 ]
 
 [[package]]
@@ -842,17 +923,16 @@ http2 = [
 
 [[package]]
 name = "httpx"
-version = "0.25.2"
+version = "0.28.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "anyio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "certifi", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "httpcore", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "idna", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "sniffio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/httpx-0.25.2-py3-none-any.whl", hash = "sha256:a05d3d052d9b2dfce0e3896636467f8a5342fb2b902c819428e1ac65413ca118" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad" },
 ]
 
 [[package]]
@@ -883,18 +963,29 @@ wheels = [
 
 [[package]]
 name = "identify"
-version = "2.6.1"
+version = "2.6.9"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/identify-2.6.1-py2.py3-none-any.whl", hash = "sha256:53863bcac7caf8d2ed85bd20312ea5dcfc22226800f6d6881f232d861db5a8f0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/identify-2.6.9-py2.py3-none-any.whl", hash = "sha256:c98b4322da415a8e5a70ff6e51fbc2d2932c015532d77e9f8537b4ba7813b150" },
 ]
 
 [[package]]
 name = "idna"
-version = "3.7"
+version = "3.17"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/idna-3.7-py3-none-any.whl", hash = "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/idna-3.17-py3-none-any.whl", hash = "sha256:466e48829084efe2548012b855df21540b96f2e20e51bd124c851536556a592c" },
+]
+
+[[package]]
+name = "importlib-metadata"
+version = "8.7.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "zipp", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/importlib_metadata-8.7.0-py3-none-any.whl", hash = "sha256:e5dd1551894c77868a30651cef00984d50e1002d06942a7101d34870c5f02afd" },
 ]
 
 [[package]]
@@ -907,10 +998,10 @@ wheels = [
 
 [[package]]
 name = "iniconfig"
-version = "1.1.1"
+version = "2.3.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/iniconfig-2.3.0-py3-none-any.whl", hash = "sha256:f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12" },
 ]
 
 [[package]]
@@ -941,16 +1032,30 @@ wheels = [
 ]
 
 [[package]]
-name = "jmespath"
+name = "jiter"
 version = "0.10.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/jmespath-0.10.0-py2.py3-none-any.whl", hash = "sha256:cdf6525904cc597730141d61b36f2e4b8ecc257c420fa2f4549bac2c2d0cb72f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:e0588107ec8e11b6f5ef0e0d656fb2803ac6cf94a96b2b9fc675c0e3ab5e8644" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:cafc4628b616dc32530c20ee53d71589816cf385dd9449633e910d596b1f5c8a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:520ef6d981172693786a49ff5b09eda72a42e539f14788124a07530f785c3ad6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2e2227db6ba93cb3e2bf67c87e594adde0609f146344e8207e8730364db27041" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:023aa0204126fe5b87ccbcd75c8a0d0261b9abdbbf46d55e7ae9f8e22424eeb8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3c189c4f1779c05f75fc17c0c1267594ed918996a231593a21a5ca5438445216" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jiter-0.10.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:31c50c40272e189d50006ad5c73883caabb73d4e9748a688b216e85a9a9ca3b9" },
+]
+
+[[package]]
+name = "jmespath"
+version = "1.0.1"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980" },
 ]
 
 [[package]]
 name = "jsonschema"
-version = "4.20.0"
+version = "4.23.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "attrs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -959,7 +1064,7 @@ dependencies = [
     { name = "rpds-py", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/jsonschema-4.20.0-py3-none-any.whl", hash = "sha256:ed6231f0429ecf966f5bc8dfef245998220549cbbcf140f913b7464c52c3b6b3" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jsonschema-4.23.0-py3-none-any.whl", hash = "sha256:fbadb6f8b144a8f8cf9f0b89ba94501d143e50411a1278633f56a7acf7fd5566" },
 ]
 
 [[package]]
@@ -977,28 +1082,14 @@ wheels = [
 ]
 
 [[package]]
-name = "jsonschema-spec"
-version = "0.2.4"
-source = { registry = "https://pypi.devinfra.sentry.io/simple" }
-dependencies = [
-    { name = "pathable", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "pyyaml", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "referencing", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/jsonschema_spec-0.2.4-py3-none-any.whl", hash = "sha256:e6dcf7056734ec6854f7888da6c08ce6c421f28aeeddce96bb90de0fb6d711ef" },
-]
-
-[[package]]
 name = "jsonschema-specifications"
-version = "2023.7.1"
+version = "2023.12.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "referencing", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/jsonschema_specifications-2023.7.1-py3-none-any.whl", hash = "sha256:05adf340b659828a004220a9613be00fa3f223f2b82002e273dee62fd50524b1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/jsonschema_specifications-2023.12.1-py3-none-any.whl", hash = "sha256:87e4fdf3a94858b8a2ba2778d9ba57d8a9cafca7c7489c46ba0d30a8bc6a9c3c" },
 ]
 
 [[package]]
@@ -1010,17 +1101,35 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:ddc3eb74e64cbcda1eda390c05a87374b18c4eb6851010cb7d28d37138353a45" },
     { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:477f83401dd4959b56bb0a9a5879effa3b221de8d7f46dd005e9711047534e01" },
     { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:18aee130bee3d713b488ae107aa80c0d2e39f1791b780cc84072845cc3178a6e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:159930535bed31b061491337fea7421d086c165f6a92fef28f7bbfd8d645c5aa" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:5adfcdd9d9a0b532ea281d00d70b0e0d7943a7310b572937c31e32d34b8b5a95" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lazy_object_proxy-1.10.0-cp314-cp314-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:cef0276c4dc8743c9e24192aec703e4e4294471a2c3ba185cffc6a85c98a2279" },
+]
+
+[[package]]
+name = "librt"
+version = "0.11.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:fa475675db22290c3158e1d42326d0f5a65f04f44a0e68c3630a25b53560fb9c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:621db29691044bdeda22e789e482e1b0f3a985d90e3426c9c6d17606416205ea" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7c39513d8b7477a2e1ed8c43fc21c524e8d5a0f8d4e8b7b074dbdbe7820a08e2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:b1ecbd9819deccc39b7542bf4d2a740d8a620694d39989e58661d3763458f8d4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:7da327dacd7be8f8ec36547373550744a3cc0e536d54665cd83f8bcd961200e8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/librt-0.11.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:05fb8fb2ab90e21c8d12ea240d744ad514da9baf381ebfa70d91d20d21713175" },
 ]
 
 [[package]]
 name = "lxml"
-version = "5.3.0"
+version = "6.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-5.3.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:8c72e9563347c7395910de6a3100a4840a75a6f60e05af5e58566868d5eb2d6a" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-5.3.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:e92ce66cd919d18d14b3856906a61d3f6b6a8500e0794142338da644260595cd" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-5.3.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:c00f323cc00576df6165cc9d21a4c21285fa6b9989c5c39830c3903dc4303ef3" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-5.3.0-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:1473427aff3d66a3fa2199004c3e601e6c4500ab86696edffdbc84954c72d832" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:a0092f2b107b69601adf562a57c956fbb596e05e3e6651cabd3054113b007e45" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a2853c8b2170cc6cd54a6b4d50d2c1a8a7aeca201f23804b4898525c7a152cfc" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:e69aa6805905807186eb00e66c6d97a935c928275182eb02ee40ba00da9623b2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp314-cp314-macosx_10_15_universal2.whl", hash = "sha256:ab863fd37458fed6456525f297d21239d987800c46e67da5ef04fc6b3dd93ac8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp314-cp314-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:97faa0860e13b05b15a51fb4986421ef7a30f0b3334061c416e0981e9450ca4c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/lxml-6.1.0-cp314-cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:fe022f20bc4569ec66b63b3fb275a3d628d9d32da6326b2982584104db6d3086" },
 ]
 
 [[package]]
@@ -1033,24 +1142,32 @@ wheels = [
 
 [[package]]
 name = "markupsafe"
-version = "2.1.2"
+version = "3.0.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/MarkupSafe-2.1.2-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:46a4dedd2c4078cec68bbc616dc0ddc319549dafe057aa27628325c2d96ac473" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/MarkupSafe-2.1.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:c163548c21c79f928b8049da6e39a1d8a19a57588dd8f414e1c2f79738dc93fd" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/MarkupSafe-2.1.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ffec59a92daae9dfd02e58939deb58dd173f465bac8c848b60629b86e5ac288b" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/MarkupSafe-2.1.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:563dfd163b5ee8a0972aa01a0514f71c1e57a9d60c7442370d66e590796b127f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:116bb52f642a37c115f517494ea5feb03889e04df47eeff5b130b1808ce7c219" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:133a43e73a802c5562be9bbcd03d090aa5a1fe899db609c29e8c8d815c5f6de6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:ccfcd093f13f0f0b7fdd0f198b90053bf7b2f02a3927a30e63f3ccc9df56b676" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:c47a551199eb8eb2121d4f0f15ae0f923d31350ab9280078d1e5f12b249e0026" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f34c41761022dd093b4b6896d4810782ffbabe30f2d443ff5f083e0cbbb8c737" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/markupsafe-3.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:457a69a9577064c05a97c41f4e65148652db078a3a509039e64d3467b9e7ef97" },
 ]
 
 [[package]]
 name = "maxminddb"
-version = "2.3.0"
+version = "2.5.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "setuptools", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.3.0-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:9dd72a4485d64032c47ecff46cfe0afdf80d24a1ad5677ec2cb86179ea230d3a" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.3.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:7cd2df10c9cdef5db61e94b9efafa327f156dc579d105e84f90e7baa439467d9" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.3.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:f45bd157505b78b0ac464d851511daf00aa00eefd754627c8e96405b5713acce" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.3.0-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:d78d0e17750f4b6c68a3994747aab707124794fd7a22a1ce0d1e25bd9b72ca90" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:95719a414763693789dc995c0d83fd22e6065b351b5fb1c48f837418077cc019" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:17bd0c6aee57649699f01ad3c00e184893331f5d5f39c348f2d8b9bbb0c6fa2f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:3273f8354cb774bdd031c6b212c7d7904c3220d3cfcf3ebee7f1c3b6bf55b98a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4930ee5d30d10a455004cbcaaaf3605432e394daa5708c82ba8ea6044a1a3318" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:7e820d10d31fb3537a2d7fbfd619754d010c3c201d3f531f8cad212d71bfce31" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:4a75dc9ff2f43825721b099b32a1b90ff7dee2124fd88d3b05f6397734468a3e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/maxminddb-2.5.2-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:4773a6d4faba8d829dcead60466b19966c2b104dfd50b915d12bff80864e6382" },
 ]
 
 [[package]]
@@ -1074,10 +1191,10 @@ wheels = [
 
 [[package]]
 name = "mistune"
-version = "2.0.4"
+version = "3.2.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/mistune-2.0.4-py2.py3-none-any.whl", hash = "sha256:182cc5ee6f8ed1b807de6b7bb50155df7b66495412836b9a74c8fbdfc75fe36d" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mistune-3.2.1-py3-none-any.whl", hash = "sha256:78cdb0ba5e938053ccf63651b352508d2efa9411dc8810bfb05f2dc5140c0048" },
 ]
 
 [[package]]
@@ -1089,25 +1206,31 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:9f970f76cf95cc6feb24285e07ee14f0ce8d02bfaf9e6b607798e3434a194362" },
     { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9287eb884ed38c14173c6b6582c1c41b0a1b623a560b832eab5f99396b6f647f" },
     { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c578c978e5f447d88295f73a7e85107d7825696760a921809ff7024d49a46fa0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:1a9e6dc6881142fc2a8935578f791f5591119d806b607260435affa39e1cc326" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:4324fe845469387801dee90d4ef2c33418f7a1808edab221951f6e57c2dbe552" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mmh3-4.0.0-cp314-cp314-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:ebc603b5ff5b3b38afe8c859e6d3987148fae75f26786cbcd2b15cd36ebe4e93" },
 ]
 
 [[package]]
 name = "more-itertools"
-version = "8.13.0"
+version = "10.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/more_itertools-8.13.0-py3-none-any.whl", hash = "sha256:c5122bffc5f104d37c1626b8615b511f3427aa5389b94d61e5ef8236bfbc3ddb" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/more_itertools-10.1.0-py3-none-any.whl", hash = "sha256:64e0735fcfdc6f3464ea133afe8ea4483b1c5fe3a3d69852e6503b43a0b222e6" },
 ]
 
 [[package]]
 name = "msgpack"
-version = "1.1.0"
+version = "1.1.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:0f92a83b84e7c0749e3f12821949d79485971f087604178026085f60ce109330" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:4a1964df7b81285d00a84da4e70cb1383f2e665e0f1f2a7027e683956d04b734" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:59caf6a4ed0d164055ccff8fe31eddc0ebc07cf7326a2aaa0dbf7a4001cd823e" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0907e1a7119b337971a689153665764adc34e89175f9a34793307d9def08e6ca" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:3765afa6bd4832fc11c3749be4ba4b69a0e8d7b728f78e68120a157a4c5d41f0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8ddb2bcfd1a8b9e431c8d6f4f7db0773084e107730ecf3472f1dfe9ad583f3d9" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:196a736f0526a03653d829d7d4c5500a97eea3648aebfd4b6743875f28aa2af8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9d592d06e3cc2f537ceeeb23d38799c6ad83255289bb84c2e5792e5a8dea268a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:9bef030f66d0376aba8aed8e3fe05eab09abef8b6afe27182fac4ffd87168dcf" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:cb8908c79b04884a6a6cfdf8b239380fb485b8dd61ae25a8bffb28ca00fb4361" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgpack-1.1.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:e4b09afd7f8c72549735d183cf973890ef3b6f0dcf6148d5572a646b2f29b169" },
 ]
 
 [[package]]
@@ -1127,30 +1250,37 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:82b2c42c1b9ebc89e822e7e13bbe9d17ede0c23c187469fdd9505afd5a481314" },
     { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:19746b50be214a54239aab822964f2ac81e38b0055cca94808359d779338c10e" },
     { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:60ef4bdb0ec8e4ad62e5a1f95230c08efb1f64f32e6e8dd2ced685bcc73858b5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:e016ff4f80d752a70b0b6163a57d9750036c1eeb21646bd1f8f522bd53276363" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:b8528befe01b6b8640032080433c04e9f8cba33867ad374781dd8807d264528c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/msgspec-0.19.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:e319d05a557dcabf9037258f1600226ab4a9f8b58db74691065cf993f1d2ac17" },
 ]
 
 [[package]]
 name = "mypy"
-version = "1.17.1"
+version = "2.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
+    { name = "ast-serialize", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "librt", marker = "(platform_python_implementation != 'PyPy' and sys_platform == 'darwin') or (platform_python_implementation != 'PyPy' and sys_platform == 'linux')" },
     { name = "mypy-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pathspec", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-1.17.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:93378d3203a5c0800c6b6d850ad2f19f7a3cdf1a3701d3416dbf128805c6a6a7" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-1.17.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:15d54056f7fe7a826d897789f53dd6377ec2ea8ba6f776dc83c2902b899fee81" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-1.17.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:209a58fed9987eccc20f2ca94afe7257a8f46eb5df1fb69958650973230f91e6" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-1.17.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:099b9a5da47de9e2cb5165e581f158e854d9e19d2e96b6698c0d64de911dd849" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8de55a8c861f2a49331f807be98d90caeceeef520bde13d43a160207f8af613e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5fdf2941a07434af755837d9880f7d7d25f1dacb1af9dcd4b9b66f2220a3024e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:e195b817c13f02352a9c124301f9f30f078405444679b6753c1b96b6eed37285" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:49890d4f76ac9e06ec117f9e09f3174da70a620a0c300953d8595c926e80947f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:761be68e023ef5d94678772396a8af1220030f80837a3afd8d0aef3b419666f4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy-2.1.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c90345fc182dc363b891350457ec69c35140858538f38b4540845afcc32b1aef" },
 ]
 
 [[package]]
 name = "mypy-extensions"
-version = "1.0.0"
+version = "1.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/mypy_extensions-1.0.0-py3-none-any.whl", hash = "sha256:4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/mypy_extensions-1.1.0-py3-none-any.whl", hash = "sha256:1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505" },
 ]
 
 [[package]]
@@ -1163,51 +1293,53 @@ wheels = [
 
 [[package]]
 name = "oauthlib"
-version = "3.1.0"
+version = "3.2.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/oauthlib-3.1.0-py2.py3-none-any.whl", hash = "sha256:df884cd6cbe20e32633f1db1072e9356f53638e4361bef4e8b03c9127c9328ea" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/oauthlib-3.2.2-py3-none-any.whl", hash = "sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca" },
 ]
 
 [[package]]
 name = "objectstore-client"
-version = "0.0.14"
+version = "0.1.11"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "filetype", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pyjwt", extra = ["crypto"], marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "sentry-sdk", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "urllib3", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "zstandard", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/objectstore_client-0.0.14-py3-none-any.whl", hash = "sha256:ca2edd8733bfcfce5463d5f6078ca70b838cb40a74f628fc37fac431e63515f6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/objectstore_client-0.1.11-py3-none-any.whl", hash = "sha256:df69c4806b794c41775db9216eeca266eae850bad093ab313defbac495e0c81f" },
 ]
 
 [[package]]
 name = "openai"
-version = "1.3.5"
+version = "1.93.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "anyio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "distro", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "httpx", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "jiter", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pydantic", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "sniffio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "tqdm", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/openai-1.3.5-py3-none-any.whl", hash = "sha256:9437458978fb502e61336c3082e02b09c49feebe0e8516a2b8fb4563e6e4af4e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/openai-1.93.0-py3-none-any.whl", hash = "sha256:3d746fe5498f0dd72e0d9ab706f26c91c0f646bf7459e5629af8ba7c9dbdf090" },
 ]
 
 [[package]]
 name = "openapi-core"
-version = "0.18.2"
+version = "0.19.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "asgiref", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "isodate", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "jsonschema", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "jsonschema-spec", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "jsonschema-path", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "more-itertools", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "openapi-schema-validator", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "openapi-spec-validator", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -1215,7 +1347,7 @@ dependencies = [
     { name = "werkzeug", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/openapi_core-0.18.2-py3-none-any.whl", hash = "sha256:ec13d366766d564450de60374f59feb0b5ccb447aed642cdf0f1ecfcc6fbe80a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/openapi_core-0.19.3-py3-none-any.whl", hash = "sha256:88c8be49b083a39923ada4c1269919ba119ab617c951f901757a054a483988b0" },
 ]
 
 [[package]]
@@ -1257,24 +1389,64 @@ wheels = [
 ]
 
 [[package]]
+name = "opentelemetry-api"
+version = "1.35.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "importlib-metadata", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/opentelemetry_api-1.35.0-py3-none-any.whl", hash = "sha256:c4ea7e258a244858daf18474625e9cc0149b8ee354f37843415771a40c25ee06" },
+]
+
+[[package]]
+name = "opentelemetry-sdk"
+version = "1.35.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "opentelemetry-api", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/opentelemetry_sdk-1.35.0-py3-none-any.whl", hash = "sha256:223d9e5f5678518f4842311bb73966e0b6db5d1e0b74e35074c052cd2487f800" },
+]
+
+[[package]]
+name = "opentelemetry-semantic-conventions"
+version = "0.56b0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "opentelemetry-api", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/opentelemetry_semantic_conventions-0.56b0-py3-none-any.whl", hash = "sha256:df44492868fd6b482511cc43a942e7194be64e94945f572db24df2e279a001a2" },
+]
+
+[[package]]
 name = "orjson"
-version = "3.10.10"
+version = "3.11.7"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.10.10-cp313-cp313-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl", hash = "sha256:44bffae68c291f94ff5a9b4149fe9d1bdd4cd0ff0fb575bcea8351d48db629a1" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.10.10-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e27b4c6437315df3024f0835887127dac2a0a3ff643500ec27088d2588fa5ae1" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.10.10-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bca84df16d6b49325a4084fd8b2fe2229cb415e15c46c529f868c3387bb1339d" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp313-cp313-macosx_15_0_arm64.whl", hash = "sha256:d897e81f8d0cbd2abb82226d1860ad2e1ab3ff16d7b08c96ca00df9d45409ef4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:814be4b49b228cfc0b3c565acf642dd7d13538f966e3ccde61f4f55be3e20785" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a12b80df61aab7b98b490fe9e4879925ba666fccdfcd175252ce4d9035865ace" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp314-cp314-macosx_15_0_arm64.whl", hash = "sha256:c2428d358d85e8da9d37cba18b8c4047c55222007a84f97156a5b22028dfbfc0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3c4bc6c6ac52cdaa267552544c73e486fecbd710b7ac09bc024d5a78555a22f6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/orjson-3.11.7-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a56df3239294ea5964adf074c54bcc4f0ccd21636049a2cf3ca9cf03b5d03cf1" },
 ]
 
 [[package]]
 name = "outcome"
-version = "1.2.0"
+version = "1.3.0.post0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "attrs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/outcome-1.2.0-py2.py3-none-any.whl", hash = "sha256:c4ab89a56575d6d38a05aa16daeaa333109c1f96167aba8901ab18b6b5e0f7f5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/outcome-1.3.0.post0-py2.py3-none-any.whl", hash = "sha256:e771c5ce06d1415e356078d3bdd68523f284b4ce5419828922b6871e65eda82b" },
 ]
 
 [[package]]
@@ -1289,18 +1461,18 @@ wheels = [
 
 [[package]]
 name = "packaging"
-version = "24.1"
+version = "26.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/packaging-24.1-py3-none-any.whl", hash = "sha256:5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/packaging-26.2-py3-none-any.whl", hash = "sha256:5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e" },
 ]
 
 [[package]]
 name = "parse"
-version = "1.19.0"
+version = "1.20.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/parse-1.19.0-py3-none-any.whl", hash = "sha256:edcbde85823a6040fd6d635ea7379a4a794c66a92c3149fe964068b500fba568" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/parse-1.20.0-py2.py3-none-any.whl", hash = "sha256:5e171b001452fa9f004c5a58a93525175468daf69b493e9fa915347ed7ff6968" },
 ]
 
 [[package]]
@@ -1324,21 +1496,10 @@ wheels = [
 
 [[package]]
 name = "pathspec"
-version = "0.9.0"
+version = "1.0.4"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a" },
-]
-
-[[package]]
-name = "pep517"
-version = "0.12.0"
-source = { registry = "https://pypi.devinfra.sentry.io/simple" }
-dependencies = [
-    { name = "tomli", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pep517-0.12.0-py2.py3-none-any.whl", hash = "sha256:dd884c326898e2c6e11f9e0b64940606a93eb10ea022a2e067959f3a110cf161" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pathspec-1.0.4-py3-none-any.whl", hash = "sha256:fb6ae2fd4e7c921a165808a552060e722767cfa526f99ca5156ed2ce45a5c723" },
 ]
 
 [[package]]
@@ -1359,52 +1520,55 @@ wheels = [
 
 [[package]]
 name = "pillow"
-version = "11.0.0"
+version = "12.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-11.0.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:bcd1fb5bb7b07f64c15618c89efcc2cfa3e95f0e3bcdbaf4642509de1942a699" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-11.0.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0e038b0745997c7dcaae350d35859c9715c71e92ffb7e0f4a8e8a16732150f38" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-11.0.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:61b887f9ddba63ddf62fd02a3ba7add935d053b6dd7d58998c630e6dbade8527" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-11.0.0-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:c6a660307ca9d4867caa8d9ca2c2658ab685de83792d1876274991adec7b93fa" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:56b25336f502b6ed02e889f4ece894a72612fe885889a6e8c4c80239ff6e5f5f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5cdfebd752ec52bf5bb4e35d9c64b40826bc5b40a13df7c3cda20a2c03a0f5ed" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:eedf4b74eda2b5a4b2b2fb4c006d6295df3bf29e459e198c90ea48e130dc75c3" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:80b2da48193b2f33ed0c32c38140f9d3186583ce7d516526d462645fd98660ae" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:8cbeb542b2ebc6fcdacabf8aca8c1a97c9b3ad3927d46b8723f9d4f033288a0f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pillow-12.2.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4bfd07bc812fbd20395212969e41931001fd59eb55a60658b0e5710872e95286" },
 ]
 
 [[package]]
 name = "pip"
-version = "23.3.1"
+version = "26.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pip-23.3.1-py3-none-any.whl", hash = "sha256:55eb67bb6171d37447e82213be585b75fe2b12b359e993773aca4de9247a052b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pip-26.0-py3-none-any.whl", hash = "sha256:98436feffb9e31bc9339cf369fd55d3331b1580b6a6f1173bacacddcf9c34754" },
 ]
 
 [[package]]
 name = "pip-tools"
-version = "7.1.0"
+version = "7.5.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "build", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "click", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pip", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pyproject-hooks", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "setuptools", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "wheel", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pip_tools-7.1.0-py3-none-any.whl", hash = "sha256:4e60b7d05b046f49ad5bf3c2818df8e78dec5820e9b331cd9898cff5ec19ff2f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pip_tools-7.5.2-py3-none-any.whl", hash = "sha256:2fe16db727bbe5bf28765aeb581e792e61be51fc275545ef6725374ad720a1ce" },
 ]
 
 [[package]]
 name = "platformdirs"
-version = "4.2.0"
+version = "4.9.4"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/platformdirs-4.2.0-py3-none-any.whl", hash = "sha256:0614df2a2f37e1a662acbd8e2b25b92ccf8632929bc6d43467e17fe89c75e068" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/platformdirs-4.9.4-py3-none-any.whl", hash = "sha256:68a9a4619a666ea6439f2ff250c12a853cd1cbd5158d258bd824a7df6be2f868" },
 ]
 
 [[package]]
 name = "pluggy"
-version = "1.5.0"
+version = "1.6.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pluggy-1.6.0-py3-none-any.whl", hash = "sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746" },
 ]
 
 [[package]]
@@ -1424,23 +1588,23 @@ wheels = [
 
 [[package]]
 name = "proto-plus"
-version = "1.25.0"
+version = "1.27.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/proto_plus-1.25.0-py3-none-any.whl", hash = "sha256:c91fc4a65074ade8e458e95ef8bac34d4008daa7cce4a12d6707066fca648961" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/proto_plus-1.27.2-py3-none-any.whl", hash = "sha256:6432f75893d3b9e70b9c412f1d2f03f65b11fb164b793d14ae2ca01821d22718" },
 ]
 
 [[package]]
 name = "protobuf"
-version = "5.27.3"
+version = "5.29.6"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.27.3-cp38-abi3-macosx_10_9_universal2.whl", hash = "sha256:68248c60d53f6168f565a8c76dc58ba4fa2ade31c2d1ebdae6d80f969cdc2d4f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.27.3-cp38-abi3-manylinux2014_aarch64.whl", hash = "sha256:b8a994fb3d1c11156e7d1e427186662b64694a62b55936b2b9348f0a7c6625ce" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.27.3-cp38-abi3-manylinux2014_x86_64.whl", hash = "sha256:a55c48f2a2092d8e213bd143474df33a6ae751b781dd1d1f4d953c128a415b25" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.29.6-cp38-abi3-macosx_10_9_universal2.whl", hash = "sha256:b5a169e664b4057183a34bdc424540e86eea47560f3c123a0d64de4e137f9269" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.29.6-cp38-abi3-manylinux2014_aarch64.whl", hash = "sha256:a8866b2cff111f0f863c1b3b9e7572dc7eaea23a7fae27f6fc613304046483e6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl", hash = "sha256:e3387f44798ac1106af0233c04fb8abf543772ff241169946f698b3a9a3d3ab9" },
 ]
 
 [[package]]
@@ -1463,25 +1627,28 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:e217ce4d37667df0bc1c397fdcd8de5e81018ef305aed9415c3b093faaeb10fb" },
     { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:245159e7ab20a71d989da00f280ca57da7641fa2cdcf71749c193cea540a74f7" },
     { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8608c078134f0b3cbd9f89b34bd60a943b23fd33cc5f065e8d5f840061bd0673" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:ce313780d0c3f165f37b759873128abc950136b18d73dad7d56a4ec2e6a30491" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp314-cp314-manylinux_2_31_aarch64.whl", hash = "sha256:3393e93c4923aceea70524588ce683387ac882d5827086d44960e84612746d90" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/psycopg2_binary-2.9.10-cp314-cp314-manylinux_2_31_x86_64.whl", hash = "sha256:957d8df3b59e1662d1c74b5e0e76b58fbeeddab5713dae0db9bbc3a36e4b003b" },
 ]
 
 [[package]]
 name = "pyasn1"
-version = "0.4.5"
+version = "0.6.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyasn1-0.4.5-py2.py3-none-any.whl", hash = "sha256:da6b43a8c9ae93bc80e2739efb38cc776ba74a886e3e9318d65fe81a8b8a2c6e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyasn1-0.6.3-py3-none-any.whl", hash = "sha256:a80184d120f0864a52a073acc6fc642847d0be408e7c7252f31390c0f4eadcde" },
 ]
 
 [[package]]
 name = "pyasn1-modules"
-version = "0.2.4"
+version = "0.4.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pyasn1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyasn1_modules-0.2.4-py2.py3-none-any.whl", hash = "sha256:79580acf813e3b7d6e69783884e6e83ac94bf4617b36a135b85c599d8a818a7b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyasn1_modules-0.4.2-py3-none-any.whl", hash = "sha256:29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a" },
 ]
 
 [[package]]
@@ -1494,32 +1661,31 @@ wheels = [
 
 [[package]]
 name = "pycountry"
-version = "17.5.14"
+version = "23.12.11"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pycountry-17.5.14-py3-none-any.whl", hash = "sha256:9d49fa8660700b5c17d462e70ed151164d0945616cc8ce10924bc1885db4c266" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pycountry-23.12.11-py3-none-any.whl", hash = "sha256:2ff91cff4f40ff61086e773d61e72005fe95de4a57bfc765509db05695dc50ab" },
 ]
 
 [[package]]
 name = "pycparser"
-version = "2.21"
+version = "3.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pycparser-2.21-py2.py3-none-any.whl", hash = "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pycparser-3.0-py3-none-any.whl", hash = "sha256:b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992" },
 ]
 
 [[package]]
 name = "pydantic"
-version = "1.10.23"
+version = "1.10.26"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.23-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:a6aa6881a18657fe66b9249e0572a9690ebc6f0b37c32872beb06bc51bff738f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.23-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:c57bfade74111335062c8ac830d5a14004742ff5b037c52c410d9e9011258bf5" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.23-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:723cb7f6aca0b471bac9d7dceb42d151d26aabdca655bd4190be3a7de008a054" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.23-py3-none-any.whl", hash = "sha256:6294bb84565c294a3a6408c52b26a42803f258d5ebfdb3ae896cd7cccfa07211" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.26-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8154c13f58d4de5d3a856bb6c909c7370f41fb876a5952a503af6b975265f4ba" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.26-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f8af0507bf6118b054a9765fb2e402f18a8b70c964f420d95b525eb711122d62" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pydantic-1.10.26-py3-none-any.whl", hash = "sha256:c43ad70dc3ce7787543d563792426a16fd7895e14be4b194b5665e36459dd917" },
 ]
 
 [[package]]
@@ -1531,11 +1697,24 @@ wheels = [
 ]
 
 [[package]]
-name = "pyjwt"
-version = "2.4.0"
+name = "pygments"
+version = "2.20.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/PyJWT-2.4.0-py3-none-any.whl", hash = "sha256:72d1d253f32dbd4f5c88eaf1fdc62f3a19f676ccbadb9dbc5d07e951b2b26daf" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pygments-2.20.0-py3-none-any.whl", hash = "sha256:81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176" },
+]
+
+[[package]]
+name = "pyjwt"
+version = "2.12.1"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyjwt-2.12.1-py3-none-any.whl", hash = "sha256:28ca37c070cad8ba8cd9790cd940535d40274d22f80ab87f3ac6a713e6e8454c" },
+]
+
+[package.optional-dependencies]
+crypto = [
+    { name = "cryptography", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 
 [[package]]
@@ -1544,6 +1723,14 @@ version = "4.0.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/pymemcache-4.0.0-py2.py3-none-any.whl", hash = "sha256:f507bc20e0dc8d562f8df9d872107a278df049fa496805c1431b926f3ddd0eab" },
+]
+
+[[package]]
+name = "pyproject-hooks"
+version = "1.2.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyproject_hooks-1.2.0-py3-none-any.whl", hash = "sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913" },
 ]
 
 [[package]]
@@ -1556,49 +1743,50 @@ wheels = [
 
 [[package]]
 name = "pytest"
-version = "8.1.2"
+version = "9.0.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "iniconfig", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pluggy", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "pygments", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest-8.1.2-py3-none-any.whl", hash = "sha256:6c06dc309ff46a05721e6fd48e492a775ed8165d2ecdf57f156a80c7e95bb142" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest-9.0.3-py3-none-any.whl", hash = "sha256:2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9" },
 ]
 
 [[package]]
 name = "pytest-cov"
-version = "4.0.0"
+version = "4.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "coverage", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_cov-4.0.0-py3-none-any.whl", hash = "sha256:2feb1b751d66a8bd934e5edfa2e961d11309dc37b73b0eabe73b5945fee20f6b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_cov-4.1.0-py3-none-any.whl", hash = "sha256:6ba70b9e97e69fcc3fb45bfeab2d0a138fb65c4d0d6a41ef33983ad114be8c3a" },
 ]
 
 [[package]]
 name = "pytest-django"
-version = "4.9.0"
+version = "4.12.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_django-4.9.0-py3-none-any.whl", hash = "sha256:1d83692cb39188682dbb419ff0393867e9904094a549a7d38a3154d5731b2b99" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_django-4.12.0-py3-none-any.whl", hash = "sha256:3ff300c49f8350ba2953b90297d23bf5f589db69545f56f1ec5f8cff5da83e85" },
 ]
 
 [[package]]
 name = "pytest-fail-slow"
-version = "0.3.0"
+version = "0.4.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_fail_slow-0.3.0-py3-none-any.whl", hash = "sha256:bf8b57a90d13f8f694ad8250c6d2e869714422c5d7f3c2d6541bec7d1706f783" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_fail_slow-0.4.0-py3-none-any.whl", hash = "sha256:83a83492b9e5bcb4b3b19d86e8c5159a15edfec44098fe64d2a82507ca546ac0" },
 ]
 
 [[package]]
@@ -1626,19 +1814,19 @@ wheels = [
 
 [[package]]
 name = "pytest-rerunfailures"
-version = "15.0"
+version = "16.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_rerunfailures-15.0-py3-none-any.whl", hash = "sha256:dd150c4795c229ef44320adc9a0c0532c51b78bb7a6843a8c53556b9a611df1a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_rerunfailures-16.3-py3-none-any.whl", hash = "sha256:6bdfb8ffb46c46072e6c16bdedee38b6c13eac620d9415ed5b63152cbf283170" },
 ]
 
 [[package]]
 name = "pytest-sentry"
-version = "0.3.0"
+version = "0.3.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -1646,7 +1834,7 @@ dependencies = [
     { name = "wrapt", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_sentry-0.3.0-py3-none-any.whl", hash = "sha256:ae182f11c18179533d4d760fd79f1992cc351062e69d253297a4cc7639535db7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_sentry-0.3.3-py3-none-any.whl", hash = "sha256:acf2b76cf5eb3213371f5d29868dab0e35e0653012d5e87af9da82f043cdfb87" },
 ]
 
 [[package]]
@@ -1659,14 +1847,14 @@ wheels = [
 
 [[package]]
 name = "pytest-xdist"
-version = "3.0.2"
+version = "3.5.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "execnet", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pytest", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_xdist-3.0.2-py3-none-any.whl", hash = "sha256:9feb9a18e1790696ea23e1434fa73b325ed4998b0e9fcb221f16fd1945e6df1b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytest_xdist-3.5.0-py3-none-any.whl", hash = "sha256:d075629c7e00b611df89f490a5063944bee7a4362a5ff11c7cc7824a03dfce24" },
 ]
 
 [[package]]
@@ -1682,25 +1870,28 @@ wheels = [
 
 [[package]]
 name = "python-rapidjson"
-version = "1.8"
+version = "1.21"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.8-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:779c09577222fbdbf901ea4909f3da0134042078d8c3f26664e0b73e6116a1d4" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.8-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:bef20c59916d699ee29fc0a4d1a688c28443beac329ae0ffd7bfd38aeed213fd" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.8-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9ea40ce18611e89eedae7b39a18929b12b00d8e5b8bd14662b51cfe8f27d848a" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.8-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:951708799770b40ca7a57dedc48e0a45652f2e0328677cf796634b016a1befd7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:863208f50b848b8e10aefcf0da2a67ce38a1044a2ebf83d6355f16f0c7865d4f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:608ade2fff2788821f25e70af4b1bfbf9ab2b2dc8ad47c91616935c5d31e3b72" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1bf6377c4e9636e20b403776585903d1ff52613a419c5f8453032146f0422634" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:3194bde069c3f03f3c425de7037cca37d337b6c7ac30f42cd2f17e15f1c4da3a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:b50b69bce2b822371469437906d1f75b4fcd44469fe89c8e88b260026aba8851" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp314-cp314-manylinux_2_24_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:08a247e4eab70804bf1804d5e6b11c139b37fc57bb282c97dce6869e112c616c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_rapidjson-1.21-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:f2d771bd6d1f2906b2873f11143466dd3f25d53966b3eb38a6a3e72b9f05d7ff" },
 ]
 
 [[package]]
 name = "python-u2flib-server"
-version = "5.0.0"
+version = "5.0.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "cryptography", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "six", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/python_u2flib_server-5.0.0-py2.py3-none-any.whl", hash = "sha256:71c75cf527371cf289bceb8dca0dfdea7408113c7923c75ee1e345934b4fc796" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/python_u2flib_server-5.0.1-py2.py3-none-any.whl", hash = "sha256:c6e974bb4a748b67845b00fc5e65c1af7b658a8a813f0ce15115b9e2b97457cc" },
 ]
 
 [[package]]
@@ -1717,6 +1908,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pytokens"
+version = "0.4.1"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8bdb9d0ce90cbf99c525e75a2fa415144fd570a1ba987380190e8b786bc6ef9b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5502408cab1cb18e128570f8d598981c68a50d0cbd7c61312a90507cd3a1276f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:29d1d8fb1030af4d231789959f21821ab6325e463f0503a61d204343c9b355d1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:4a14d5f5fc78ce85e426aa159489e2d5961acf0e47575e08f35584009178e321" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:97f50fd18543be72da51dd505e2ed20d2228c74e0464e4262e4899797803d7fa" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pytokens-0.4.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:dc74c035f9bfca0255c1af77ddd2d6ae8419012805453e4b0e7513e17904545d" },
+]
+
+[[package]]
 name = "pyupgrade"
 version = "3.19.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
@@ -1729,36 +1933,42 @@ wheels = [
 
 [[package]]
 name = "pyuwsgi"
-version = "2.0.28.post1"
+version = "2.0.30"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.28.post1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:787fd67086df87921bc8837ef018cd7cf02834136f4735811375c1e17b776b40" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.28.post1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:f27ee3445eab37fabbe3afc6af68220c8f0bd28c5228d6a2ec7886d080614ad4" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.28.post1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5bdd7ec17f795049ef346dc10efbfce6c1a9500f3f39262c86107c70b9a83cb9" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.28.post1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:32838668eab84ac6847876d9da72768552fca556e09a1fe3a63facb976bd12ad" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:ed7574812ead2bb6f9d150c4e3d0b57c514a65a9905145dbfabd3e0189a71887" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8444c80c693f7949beea14d5ddaba39c8983d50b3f5c84868fbec65dc2233ef5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f1fe142fd163c4e03a1f415180cffdc444fd7b912b065bb10517ca44e923ba7e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3b8dfe829bdd5c1a2a8c7571fd4bec0575e335d340a84ec7c039a97c1f41d9a7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp314-cp314-macosx_15_0_arm64.whl", hash = "sha256:7b9d64155d25c19c8684adc85a89a19575956244d0b3f9bbbe52478bd8ebb1ac" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp314-cp314-manylinux_2_31_aarch64.whl", hash = "sha256:fd75850706456957d09d8798a7dcfeb58c9ad5ff5f007db113213c27f9efceab" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyuwsgi-2.0.30-cp314-cp314-manylinux_2_31_x86_64.whl", hash = "sha256:eefc4481e6ecd431a9e74efb97ed6677229bb49b8d0b05d7e2b3b4c75034f31c" },
 ]
 
 [[package]]
 name = "pyvat"
-version = "1.3.15"
+version = "1.3.16"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pycountry", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/pyvat-1.3.15-py3-none-any.whl", hash = "sha256:ce320791323c72d29cf2fd0f3211161057861414f1e88171d88d68d8afc878c7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyvat-1.3.16-py3-none-any.whl", hash = "sha256:17c54ed46954fd1f5c5a9894fac718b24f43cbd917381241a70a88ebe1f6c33b" },
 ]
 
 [[package]]
 name = "pyyaml"
-version = "6.0.2"
+version = "6.0.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/PyYAML-6.0.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:efdca5630322a10774e8e98e1af481aad470dd62c3170801852d752aa7a783ba" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/PyYAML-6.0.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:50187695423ffe49e2deacb8cd10510bc361faac997de9efef88badc3bb9e2d1" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/PyYAML-6.0.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0ffe8360bab4910ef1b9e87fb812d8bc0a308b0d0eef8c8f44e0254ab3b07133" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:70b189594dbe54f75ab3a1acec5f1e3faa7e8cf2f1e08d9b561cb41b845f69d5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:8da9669d359f02c0b91ccc01cac4a67f16afec0dac22c2ad09f46bee0697eba8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:2283a07e2c21a2aa78d9c4442724ec1eb15f5e42a723b99cb3d822d48f5f7ad1" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ee2922902c45ae8ccada2c5b501ab86c36525b883eff4255313a253a3160861c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:0f29edc409a6392443abf94b9cf89ce99889a1dd5376d94316ae5145dfedd5d6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:34d5fcd24b8445fadc33f9cf348c1047101756fd760b4dacb5c3e99755703310" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:501a031947e3a9025ed4405a168e6ef5ae3126c59f90ce0cd6f2bfc477be31b7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5" },
 ]
 
 [[package]]
@@ -1774,61 +1984,64 @@ wheels = [
 
 [[package]]
 name = "redis"
-version = "3.4.1"
+version = "3.5.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/redis-3.4.1-py2.py3-none-any.whl", hash = "sha256:b205cffd05ebfd0a468db74f0eedbff8df1a7bfc47521516ade4692991bb0833" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/redis-3.5.3-py2.py3-none-any.whl", hash = "sha256:432b788c4530cfe16d8d943a09d40ca6c16149727e4afe8c2c9d5580c59d9f24" },
 ]
 
 [[package]]
 name = "redis-py-cluster"
-version = "2.1.0"
+version = "2.1.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "redis", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/redis_py_cluster-2.1.0-py2.py3-none-any.whl", hash = "sha256:22aaa35c145c7a278fea593e94916b6fdf377e49c0af0508d89112f3e79aab06" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/redis_py_cluster-2.1.3-py2.py3-none-any.whl", hash = "sha256:38f08850fde469ffd76bced7309721114acc487e52b76f374a0502c34c69b4ec" },
 ]
 
 [[package]]
 name = "referencing"
-version = "0.30.2"
+version = "0.31.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "attrs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "rpds-py", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/referencing-0.30.2-py3-none-any.whl", hash = "sha256:449b6669b6121a9e96a7f9e410b245d471e8d48964c67113ce9afe50c8dd7bdf" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/referencing-0.31.0-py3-none-any.whl", hash = "sha256:381b11e53dd93babb55696c71cf42aef2d36b8a150c49bf0bc301e36d536c882" },
 ]
 
 [[package]]
 name = "regex"
-version = "2022.9.13"
+version = "2023.12.25"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2022.9.13-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:e459ae00e1ca7b15bcd70a1dc6349464958845540bf8562516100ee1d6748342" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2022.9.13-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:9a0f0235cab3a306d0e46d6bbd4c4a19ac9a0ca2a4a2b6b4bde7a614ecabf5b2" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2022.9.13-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:01a4a1991b405c8e810ff15bcacb4f0766510438be7c054a624f7e8665f2f4c6" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2022.9.13-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:43f252b6c4dc0b274e7b34e4ef6c491ade5d6d1fd4de02974743f4eabddc3b73" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:d4e30b604855b840b154051e1776341f57f3756e31315f84d038541569b62a5a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:7040f86c91828352c614f1c359faa2e0852544053d76312875ae8b48c04d6b72" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:795014e8be4456d9dd5e3088b6c9d084f6b9bfc1c5fa11a98ed53a905e9a2d02" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c934389e3746d11a3a54ac7bc9137df0d706185a0d261c8282a610e16c30fbf4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:d1819f06c5dcc8f0d64a76f2985f448072797691f93a69808ec6ef7ecde115b7" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:3f64c645345d065dfbec10eee3eb7ac3a6e04055e31f4a3b18e7118aa2266752" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/regex-2023.12.25-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:9c6d42f1cc37c4be6a5c105a729e5e47b7869ee426dd9997bc4dc7cf82457df8" },
 ]
 
 [[package]]
 name = "reportlab"
-version = "4.4.0"
+version = "4.4.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
-    { name = "chardet", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "charset-normalizer", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pillow", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/reportlab-4.4.0-py3-none-any.whl", hash = "sha256:0a993f1d4a765fcbdf4e26adc96b3351004ebf4d27583340595ba7edafebec32" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/reportlab-4.4.2-py3-none-any.whl", hash = "sha256:58e11be387457928707c12153b7e41e52533a5da3f587b15ba8f8fd0805c6ee2" },
 ]
 
 [[package]]
 name = "requests"
-version = "2.32.4"
+version = "2.33.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "certifi", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -1837,7 +2050,7 @@ dependencies = [
     { name = "urllib3", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/requests-2.32.4-py3-none-any.whl", hash = "sha256:27babd3cda2a6d50b30443204ee89830707d396671944c998b5975b031ac2b2c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/requests-2.33.1-py3-none-any.whl", hash = "sha256:4e6d1ef462f3626a1f0a0a9c42dd93c63bad33f9f1c1937509b8c5c8718ab56a" },
 ]
 
 [[package]]
@@ -1853,39 +2066,38 @@ wheels = [
 
 [[package]]
 name = "requests-oauthlib"
-version = "1.2.0"
+version = "2.0.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "oauthlib", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/requests_oauthlib-1.2.0-py2.py3-none-any.whl", hash = "sha256:d3ed0c8f2e3bbc6b344fa63d6f933745ab394469da38db16bdddb461c7e25140" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36" },
 ]
 
 [[package]]
 name = "responses"
-version = "0.23.1"
+version = "0.26.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "pyyaml", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "types-pyyaml", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "urllib3", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/responses-0.23.1-py3-none-any.whl", hash = "sha256:8a3a5915713483bf353b6f4079ba8b2a29029d1d1090a503c70b0dc5d9d0c7bd" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/responses-0.26.1-py3-none-any.whl", hash = "sha256:8aacc4586eb08fb2208ef64a9eb4258d9b0c6e6f4260845f2f018ab847495345" },
 ]
 
 [[package]]
 name = "rfc3339-validator"
-version = "0.1.2"
+version = "0.1.4"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "six", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/rfc3339_validator-0.1.2-py2.py3-none-any.whl", hash = "sha256:ce04632ad50bd8cead747a17baabbf720dc0203adc7eee9e66b702a24265dc35" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/rfc3339_validator-0.1.4-py2.py3-none-any.whl", hash = "sha256:24f6ec1eda14ef823da9e36ec7113124b39c04d50a4d3d3a3c2859577e7791fa" },
 ]
 
 [[package]]
@@ -1908,25 +2120,14 @@ wheels = [
 ]
 
 [[package]]
-name = "rsa"
-version = "4.8"
-source = { registry = "https://pypi.devinfra.sentry.io/simple" }
-dependencies = [
-    { name = "pyasn1", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/rsa-4.8-py3-none-any.whl", hash = "sha256:95c5d300c4e879ee69708c428ba566c59478fd653cc3a22243eeb8ed846950bb" },
-]
-
-[[package]]
 name = "s3transfer"
-version = "0.10.0"
+version = "0.10.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "botocore", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/s3transfer-0.10.0-py3-none-any.whl", hash = "sha256:3cdb40f5cfa6966e812209d0994f2a4709b561c88e90cf00c2696d2df4e56b2e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/s3transfer-0.10.1-py3-none-any.whl", hash = "sha256:ceb252b11bcf87080fb7850a224fb6e05c8a776bab8f2b64b7f25b969464839d" },
 ]
 
 [[package]]
@@ -1967,7 +2168,8 @@ dependencies = [
     { name = "djangorestframework", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "drf-spectacular", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "fido2", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
-    { name = "google-api-core", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "google-api-core", version = "2.25.1", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version >= '3.14' and sys_platform == 'darwin') or (python_full_version >= '3.14' and sys_platform == 'linux')" },
+    { name = "google-api-core", version = "2.30.3", source = { registry = "https://pypi.devinfra.sentry.io/simple" }, marker = "(python_full_version < '3.14' and sys_platform == 'darwin') or (python_full_version < '3.14' and sys_platform == 'linux')" },
     { name = "google-auth", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-cloud-bigtable", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "google-cloud-build", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2284,32 +2486,31 @@ dev = [
 
 [[package]]
 name = "sentry-arroyo"
-version = "2.35.0"
+version = "2.40.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "confluent-kafka", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_arroyo-2.35.0-py3-none-any.whl", hash = "sha256:a403fe4ea1f371e4582c8934efc7abff71c18d4c911dd9ede2b6b7956aa0558a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_arroyo-2.40.0-py3-none-any.whl", hash = "sha256:c65b1e50361322d34fc9c4cc7e786dbba85f28304b32a44ea56fbe133a1b8c31" },
 ]
 
 [[package]]
 name = "sentry-cli"
-version = "2.16.0"
+version = "3.5.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-2.16.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:db01ed6951a6f65faaf97b34f8dbe66c42c59f922f8be0f383f032309a4dd0b6" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-2.16.0-py3-none-macosx_11_0_universal2.whl", hash = "sha256:c2f51b3b79113ec4080908af7a0a8a43a3bf30873a801ed8f095ba5cf7b73e9e" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-2.16.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_2_aarch64.whl", hash = "sha256:872462805c749cc974ba27709052194f080ff44762a47b98d7f520e34e64a260" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-2.16.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.musllinux_1_2_x86_64.whl", hash = "sha256:9d0541a3cbe96697f354549f2464c24c3250aa189e58d690ca632f434c34e6e8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-3.5.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:be486dd34adfae3ef2b7c8c8cff7f59071752f058468b20d5639f49611e7715f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-3.5.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_2_aarch64.whl", hash = "sha256:bb488adc6a1532dc69d03754a2e8dd337c6221d1251b5f01328e03d349828e97" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_cli-3.5.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.musllinux_1_2_x86_64.whl", hash = "sha256:20f2ed4938293a0f239d5db771ccc133d159bd41edb9e5004528a440dc7181c1" },
 ]
 
 [[package]]
 name = "sentry-conventions"
-version = "0.3.0"
+version = "0.11.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_conventions-0.3.0-py3-none-any.whl", hash = "sha256:675e23ab13c690726b24d2d8bd96b043a4710c4f479373fa3b061510a279d1c6" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_conventions-0.11.0-py3-none-any.whl", hash = "sha256:881581e4319620d1d798306a0a631fbc1265fab9581dc268401982999f70cc5c" },
 ]
 
 [[package]]
@@ -2325,19 +2526,19 @@ wheels = [
 
 [[package]]
 name = "sentry-devenv"
-version = "1.22.0"
+version = "1.28.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "sentry-sdk", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_devenv-1.22.0-py3-none-any.whl", hash = "sha256:36a82352fecbdea0c2f5ab1cce74dc64d4d741b4a249ab1a7a88524a3aa7c2f9" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_devenv-1.28.0-py3-none-any.whl", hash = "sha256:304b603c561c4a0a206c7d1346aebf8ec44e6175f44ecce0b9c1a5848fb3f7ca" },
 ]
 
 [[package]]
 name = "sentry-forked-django-stubs"
-version = "5.2.2.post2"
+version = "5.2.5.post3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "django", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2346,7 +2547,7 @@ dependencies = [
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_forked_django_stubs-5.2.2.post2-py3-none-any.whl", hash = "sha256:612510066050aa93d24ea54735f7df6871ebe46c292398ac68ed2c0c2685b38a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_forked_django_stubs-5.2.5.post3-py3-none-any.whl", hash = "sha256:70aa0a64f4f6881c463678e8bd8e061cdc197be173a9cdfe095ecb4c888688b9" },
 ]
 
 [[package]]
@@ -2374,7 +2575,7 @@ wheels = [
 
 [[package]]
 name = "sentry-kafka-schemas"
-version = "2.1.16"
+version = "2.1.33"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "fastjsonschema", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2385,7 +2586,7 @@ dependencies = [
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_kafka_schemas-2.1.16-py2.py3-none-any.whl", hash = "sha256:65450a0ee0fa4a0972681e57acb9a9dd88a42fea014f3b1066b2b4320a6e2095" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_kafka_schemas-2.1.33-py2.py3-none-any.whl", hash = "sha256:5ddadce9456acb140db31774f801d8b4bac7dffd14ac74c6711534b6f3474b2a" },
 ]
 
 [[package]]
@@ -2401,7 +2602,7 @@ wheels = [
 
 [[package]]
 name = "sentry-protos"
-version = "0.4.10"
+version = "0.27.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "grpc-stubs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2409,43 +2610,43 @@ dependencies = [
     { name = "protobuf", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_protos-0.4.10-py3-none-any.whl", hash = "sha256:fe32f66f6d074978fb3b72be20932cb8354a49a119fac9861c4a876b9f476b2e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_protos-0.27.1-py3-none-any.whl", hash = "sha256:68fd36acf542ce82962d0cc98c2a5fdfa0578799feff6506e06488dcc0a041a7" },
 ]
 
 [[package]]
 name = "sentry-redis-tools"
-version = "0.5.0"
+version = "0.5.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "redis", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_redis_tools-0.5.0-py2.py3-none-any.whl", hash = "sha256:3a1c1e1082df07bc502689baad0becbe69c0b70f2672cf6a14ea69bcd2871a18" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_redis_tools-0.5.1-py2.py3-none-any.whl", hash = "sha256:1ea34c1a8d735ea1044eb661457157f9212b1411ca31e73acf66f8cb0c9cf9a0" },
 ]
 
 [[package]]
 name = "sentry-relay"
-version = "0.9.22"
+version = "0.9.27"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "milksnake", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.22-py2.py3-none-macosx_14_0_arm64.whl", hash = "sha256:f6bdc7ce0bac7478efb0a5adf87933db89d93d278c535771921c9470e90026b5" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.22-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:9be4ae0835c4877aa9a9d3183041132335539d18a185e9213b99f212147901b2" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.22-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:e94742aa5aefa484dc7584ca5dd2084951bc3866e50d557e8554a37170573fc3" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.27-py2.py3-none-macosx_14_0_arm64.whl", hash = "sha256:ae370c69cc3699210e99f4a44b84e50291c15e455573cb708318d05859b6c7a8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.27-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:5c56279d945cfc6b94f8dd4a42e10b6c0a73628e99e1f1cbb63111197f66bd96" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_relay-0.9.27-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:6976c0b4d1e721700f8a84eafb25cc411e359c1d76ac41a0fec97677b893da43" },
 ]
 
 [[package]]
 name = "sentry-sdk"
-version = "2.47.0"
+version = "2.62.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "certifi", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "urllib3", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_sdk-2.47.0-py2.py3-none-any.whl", hash = "sha256:d72f8c61025b7d1d9e52510d03a6247b280094a327dd900d987717a4fce93412" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_sdk-2.62.0-py3-none-any.whl", hash = "sha256:27f61d13a86c3c1648dec666dd5a64f79772dd6a84b446f11866601ecab24f6f" },
 ]
 
 [package.optional-dependencies]
@@ -2455,13 +2656,13 @@ http2 = [
 
 [[package]]
 name = "sentry-usage-accountant"
-version = "0.0.10"
+version = "0.0.11"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "sentry-arroyo", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_usage_accountant-0.0.10-py3-none-any.whl", hash = "sha256:8317a2117b694c26b429150134287dcdc03c9e5b0711888ddd87bf75147b0cca" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sentry_usage_accountant-0.0.11-py3-none-any.whl", hash = "sha256:0350e21353538ebccd3fdb50435dafeb144b1668399d01a9479ea476e472fcf8" },
 ]
 
 [[package]]
@@ -2473,14 +2674,17 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:3384e682b158d569e85a51cfbde2afd1ab57ecf93ea6651fe198d0ba451196ee" },
     { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:0564a936ea687cd24dffcea35903e2a20962aa6ac20e61dd3a207652401492dd" },
     { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a5d1cb3f81531f0eb40e13246b679a1bdb58762b170303463cb06ecc296f26d0" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:b53602371a52b91c80aaf578b5ada29d311d12b8a69c0c17fbc35b76a1fd4f2e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:fcb966a6c57cf07cc9448321a08f3be6b11b7635be502669bc1d8745115d7e7f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/setproctitle-1.3.7-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:46178672599b940368d769474fe13ecef1b587d58bb438ea72b9987f74c56ea5" },
 ]
 
 [[package]]
 name = "setuptools"
-version = "70.0.0"
+version = "80.10.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/setuptools-70.0.0-py3-none-any.whl", hash = "sha256:54faa7f2e8d2d11bcd2c07bed282eef1046b5c080d1c32add737d7b5817b1ad4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/setuptools-80.10.2-py3-none-any.whl", hash = "sha256:95b30ddfb717250edb492926c92b5221f7ef3fbcc2b07579bcd4a27da21d0173" },
 ]
 
 [[package]]
@@ -2492,6 +2696,9 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:45fadf81bff24af545f337707b229ba01a750c67cae8b25762245b78978478d3" },
     { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:cfda4d6ae61a95c4f053167a6a305b82dac943a864144ccc0efe8efdca1c0c2c" },
     { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d9fa1be0834a2c56b3fb083a9e764e00eac7c307d13230dc58ec65d3a635498f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:2b3c5583354512a68f2e27021dae07b80d17986c8583e3547b53d1e0cbcd05c2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:e220a00a16717d94fcfdca47904da9d13583757be9a53aae6f48f47dfc372ec5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/simplejson-3.17.6-cp314-cp314-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:b6e7ee6a6d84510d3897a5434ee6fc13c83c81425a812bee9ed2c6bd8ae8afb8" },
 ]
 
 [[package]]
@@ -2504,10 +2711,10 @@ wheels = [
 
 [[package]]
 name = "slack-sdk"
-version = "3.27.2"
+version = "3.40.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/slack_sdk-3.27.2-py2.py3-none-any.whl", hash = "sha256:af97158e6ac7f667e158e8036e63dc1f79db9bd36216a33c10fcc49be7c2f30c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/slack_sdk-3.40.1-py2.py3-none-any.whl", hash = "sha256:cd8902252979aa248092b0d77f3a9ea3cc605bc5d53663ad728e892e26e14a65" },
 ]
 
 [[package]]
@@ -2547,10 +2754,10 @@ wheels = [
 
 [[package]]
 name = "sqlparse"
-version = "0.5.0"
+version = "0.5.5"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/sqlparse-0.5.0-py3-none-any.whl", hash = "sha256:c204494cd97479d0e39f28c93d46c0b2d5959c7b9ab904762ea6c7af211c8663" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/sqlparse-0.5.5-py3-none-any.whl", hash = "sha256:12a08b3bf3eec877c519589833aed092e2444e68240a3577e8e26148acc7b1ba" },
 ]
 
 [[package]]
@@ -2563,22 +2770,22 @@ wheels = [
 
 [[package]]
 name = "stripe"
-version = "6.7.0"
+version = "7.6.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "requests", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "typing-extensions", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/stripe-6.7.0-py2.py3-none-any.whl", hash = "sha256:a453d6daa633f656297a9323c736fdcb53164418d643fdc30499a6d32ad7933c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/stripe-7.6.0-py2.py3-none-any.whl", hash = "sha256:7bd0c0af5426a9842a3587a63265b916a3213395ed9c34f16c9f1ce365937357" },
 ]
 
 [[package]]
 name = "structlog"
-version = "22.1.0"
+version = "22.3.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/structlog-22.1.0-py3-none-any.whl", hash = "sha256:760d37b8839bd4fe1747bed7b80f7f4de160078405f4b6a1db9270ccbfce6c30" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/structlog-22.3.0-py3-none-any.whl", hash = "sha256:b403f344f902b220648fa9f286a23c0cc5439a5844d271fec40562dbadbc70ad" },
 ]
 
 [[package]]
@@ -2594,16 +2801,15 @@ wheels = [
 
 [[package]]
 name = "symbolic"
-version = "12.14.1"
+version = "13.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "milksnake", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-12.14.1-py2.py3-none-macosx_10_15_x86_64.whl", hash = "sha256:8500320a80d8138026db3ff28a11d697eb0922fc51b1e50c8a206e79f4b39745" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-12.14.1-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:0b2816167383d4fcb11a2224459edaacfe092aa885168bd7e81e0564c7bf5829" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-12.14.1-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:6b5242319206d9f8165123990984f9300a3a1f75ccaee8b7da0ef28da4d99258" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-12.14.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:f13625d3923db47c464db12f3b78d40d6ff9d2be07d1e099d881d00be343b234" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-13.2.0-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:68ecfd502a75d372283f02ae11bdf3616325ed4768301943e03634ad6670d516" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-13.2.0-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:6db8179ec29b493902534429ca9ce008c85be53f46dfb086ef6509ec86c38dec" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/symbolic-13.2.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:0f348d4a4f87351cf109e6b7de41096279a6f4c687a2ca8412554d146848bf95" },
 ]
 
 [[package]]
@@ -2633,6 +2839,9 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:1784edf173ca840ba154de6eed000b5727f65ab92972c2f88cec5c4d6349c5f2" },
     { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2f5876a5682ce1f517e55d7ace2383432627889f6f7e338b961f99d684fd9e8d" },
     { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:667b150fedb54acdca2a4bea5bf6da837b43e6dd12857301b48191f8803ba93f" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:555af1ee44a940fe138f4729117cfc99c537e46099a789a16c2d54fc28b07db5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:6d39a412ce935ae81f55702c2f46fa6b7bfc9413c4e841e5aa0f8e52842ae3bb" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/time_machine-2.16.0-cp314-cp314-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:42b6c78860e7a70f25e517687cea83374e5346fc08a984d414d9243337444bc9" },
 ]
 
 [[package]]
@@ -2672,14 +2881,6 @@ wheels = [
 ]
 
 [[package]]
-name = "tomli"
-version = "2.0.1"
-source = { registry = "https://pypi.devinfra.sentry.io/simple" }
-wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc" },
-]
-
-[[package]]
 name = "toronado"
 version = "0.1.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
@@ -2694,15 +2895,15 @@ wheels = [
 
 [[package]]
 name = "tqdm"
-version = "4.66.4"
+version = "4.67.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/tqdm-4.66.4-py3-none-any.whl", hash = "sha256:b75ca56b413b030bc3f00af51fd2c1a1a5eac6a0c1cca83cbb37a5c52abce644" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/tqdm-4.67.1-py3-none-any.whl", hash = "sha256:26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2" },
 ]
 
 [[package]]
 name = "trio"
-version = "0.25.0"
+version = "0.30.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "attrs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2712,35 +2913,39 @@ dependencies = [
     { name = "sortedcontainers", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/trio-0.25.0-py3-none-any.whl", hash = "sha256:e6458efe29cc543e557a91e614e2b51710eba2961669329ce9c862d50c6e8e81" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/trio-0.30.0-py3-none-any.whl", hash = "sha256:3bf4f06b8decf8d3cf00af85f40a89824669e2d033bb32469d34840edcfc22a5" },
 ]
 
 [[package]]
 name = "trio-websocket"
-version = "0.11.1"
+version = "0.12.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
+    { name = "outcome", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "trio", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "wsproto", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/trio_websocket-0.11.1-py3-none-any.whl", hash = "sha256:520d046b0d030cf970b8b2b2e00c4c2245b3807853ecd44214acd33d74581638" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/trio_websocket-0.12.2-py3-none-any.whl", hash = "sha256:df605665f1db533f4a386c94525870851096a223adcb97f72a07e8b4beba45b6" },
 ]
 
 [[package]]
 name = "types-beautifulsoup4"
-version = "4.11.6"
+version = "4.12.0.7"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "types-html5lib", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_beautifulsoup4-4.11.6-py3-none-any.whl", hash = "sha256:ac9dd1383481201ea07f27c5a43e7b1ee71caf9c720b7ae951db15d60d126e80" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_beautifulsoup4-4.12.0.7-py3-none-any.whl", hash = "sha256:8b03b054cb2e62abf82bbbeda57a07257026f4ed9010ef17d8f8eff43bb1f9b7" },
 ]
 
 [[package]]
 name = "types-cachetools"
-version = "5.3.0.5"
+version = "5.3.0.7"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_cachetools-5.3.0.5-py3-none-any.whl", hash = "sha256:c0c5fa00199017d974c935bf043c467d5204e4f835141e489b48765b5ac1d960" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_cachetools-5.3.0.7-py3-none-any.whl", hash = "sha256:98c069dc7fc087b1b061703369c80751b0a0fc561f6fb072b554e5eee23773a0" },
 ]
 
 [[package]]
@@ -2756,94 +2961,120 @@ wheels = [
 ]
 
 [[package]]
-name = "types-jsonschema"
-version = "4.16.1"
+name = "types-html5lib"
+version = "1.1.11.15"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_jsonschema-4.16.1-py3-none-any.whl", hash = "sha256:21ca9a227185b83655c71755b5834c36d66ca43f9de77c018d61c4f917f851ab" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_html5lib-1.1.11.15-py3-none-any.whl", hash = "sha256:16fe936d99b9f7fc210e2e21a2aed1b6bbbc554ad8242a6ef75f6f2bddb27e58" },
+]
+
+[[package]]
+name = "types-jsonschema"
+version = "4.23.0.20240813"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "referencing", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_jsonschema-4.23.0.20240813-py3-none-any.whl", hash = "sha256:be283e23f0b87547316c2ee6b0fd36d95ea30e921db06478029e10b5b6aa6ac3" },
 ]
 
 [[package]]
 name = "types-oauthlib"
-version = "3.2.0.8"
+version = "3.2.0.20240806"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_oauthlib-3.2.0.8-py3-none-any.whl", hash = "sha256:a42d6765a86a7b215e2b6984b144ae2c7fc9becf975a92dcb0f046f1d4892146" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_oauthlib-3.2.0.20240806-py3-none-any.whl", hash = "sha256:581bb8e194700d16ae1f0b62a6039261ed1afd0b88e78782e1c48f6507c52f34" },
 ]
 
 [[package]]
 name = "types-parsimonious"
-version = "0.10.0.8"
+version = "0.10.0.10"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_parsimonious-0.10.0.8-py3-none-any.whl", hash = "sha256:6fa3ca579e77bd39b7aa86b4214c9cc81abe33d22bef9dc562e754d6992a995c" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_parsimonious-0.10.0.10-py3-none-any.whl", hash = "sha256:46cad84569b3372557eb3ee76cf0d54cfa30b651f85117b514fb14ece6315907" },
 ]
 
 [[package]]
 name = "types-pillow"
-version = "9.5.0.4"
+version = "10.2.0.20240822"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_Pillow-9.5.0.4-py3-none-any.whl", hash = "sha256:69427d9fa4320ff6e30f00fb9c0dd71185dc0a16de4757774220104759483466" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_Pillow-10.2.0.20240822-py3-none-any.whl", hash = "sha256:d9dab025aba07aeb12fd50a6799d4eac52a9603488eca09d7662543983f16c5d" },
 ]
 
 [[package]]
 name = "types-protobuf"
-version = "4.23.0.1"
+version = "6.30.2.20250703"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_protobuf-4.23.0.1-py3-none-any.whl", hash = "sha256:c926104f69ea62103846681b35b690d8d100ecf86c6cdda16c850a1313a272e4" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_protobuf-6.30.2.20250703-py3-none-any.whl", hash = "sha256:fa5aff9036e9ef432d703abbdd801b436a249b6802e4df5ef74513e272434e57" },
 ]
 
 [[package]]
 name = "types-psutil"
-version = "5.9.5.16"
+version = "5.9.5.17"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_psutil-5.9.5.16-py3-none-any.whl", hash = "sha256:fec713104d5d143afea7b976cfa691ca1840f5d19e8714a5d02a96ebd061363e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_psutil-5.9.5.17-py3-none-any.whl", hash = "sha256:2161d166256084acf629d30aaf6bda8bee726ae1fea530559650281056b491fc" },
 ]
 
 [[package]]
 name = "types-psycopg2"
-version = "2.9.21"
+version = "2.9.21.20"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_psycopg2-2.9.21-py3-none-any.whl", hash = "sha256:6f05af9369abe1ffbbe86abcae23dd61cd607141349957eebd30331b36d216f2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_psycopg2-2.9.21.20-py3-none-any.whl", hash = "sha256:5b1e2e1d9478f8a298ea7038f8ea988e0ccc1f0af39f84636d57ef0da6f29e95" },
+]
+
+[[package]]
+name = "types-pyopenssl"
+version = "23.2.0.2"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "cryptography", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_pyOpenSSL-23.2.0.2-py3-none-any.whl", hash = "sha256:19536aa3debfbe25a918cf0d898e9f5fbbe6f3594a429da7914bf331deb1b342" },
 ]
 
 [[package]]
 name = "types-python-dateutil"
-version = "2.8.19"
+version = "2.8.19.14"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_python_dateutil-2.8.19-py3-none-any.whl", hash = "sha256:6284df1e4783d8fc6e587f0317a81333856b872a6669a282f8a325342bce7fa8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_python_dateutil-2.8.19.14-py3-none-any.whl", hash = "sha256:f977b8de27787639986b4e28963263fd0e5158942b3ecef91b9335c130cb1ce9" },
 ]
 
 [[package]]
 name = "types-pyyaml"
-version = "6.0.11"
+version = "6.0.12.20241230"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_PyYAML-6.0.11-py3-none-any.whl", hash = "sha256:8f890028123607379c63550179ddaec4517dc751f4c527a52bb61934bf495989" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_PyYAML-6.0.12.20241230-py3-none-any.whl", hash = "sha256:fa4d32565219b68e6dee5f67534c722e53c00d1cfc09c435ef04d7353e1e96e6" },
 ]
 
 [[package]]
 name = "types-redis"
-version = "3.5.18"
+version = "4.6.0.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "cryptography", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+    { name = "types-pyopenssl", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_redis-3.5.18-py3-none-any.whl", hash = "sha256:5c55c4b9e8ebdc6d57d4e47900b77d99f19ca0a563264af3f701246ed0926335" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_redis-4.6.0.3-py3-none-any.whl", hash = "sha256:67c44c14369c33c2a300da2a50b5607c0fc888f7b85eeb7c73e15c78a0f05edd" },
 ]
 
 [[package]]
 name = "types-requests"
-version = "2.32.0.20241016"
+version = "2.32.4.20250611"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "urllib3", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_requests-2.32.0.20241016-py3-none-any.whl", hash = "sha256:4195d62d6d3e043a4eaaf08ff8a62184584d2e8684e9d2aa178c7915a7da3747" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_requests-2.32.4.20250611-py3-none-any.whl", hash = "sha256:ad2fe5d3b0cb3c2c902c8815a70e7fb2302c4b8c1f77bdcd738192cdb3878072" },
 ]
 
 [[package]]
@@ -2860,18 +3091,18 @@ wheels = [
 
 [[package]]
 name = "types-setuptools"
-version = "69.0.0.0"
+version = "74.1.0.20240907"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_setuptools-69.0.0.0-py3-none-any.whl", hash = "sha256:8c86195bae2ad81e6dea900a570fe9d64a59dbce2b11cc63c046b03246ea77bf" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_setuptools-74.1.0.20240907-py3-none-any.whl", hash = "sha256:15b38c8e63ca34f42f6063ff4b1dd662ea20086166d5ad6a102e670a52574120" },
 ]
 
 [[package]]
 name = "types-simplejson"
-version = "3.17.7.2"
+version = "3.19.0.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/types_simplejson-3.17.7.2-py3-none-any.whl", hash = "sha256:ee1a49ed92b92a7adeaabb3413b71bad3623fb731791c5614db763ce9f195725" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/types_simplejson-3.19.0.2-py3-none-any.whl", hash = "sha256:8ba093dc7884f59b3e62aed217144085e675a269debc32678fd80e0b43b2b86f" },
 ]
 
 [[package]]
@@ -2884,18 +3115,18 @@ wheels = [
 
 [[package]]
 name = "typing-extensions"
-version = "4.12.0"
+version = "4.15.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/typing_extensions-4.12.0-py3-none-any.whl", hash = "sha256:b349c66bea9016ac22978d800cfff206d5f9816951f12a7d0ec5578b0a819594" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/typing_extensions-4.15.0-py3-none-any.whl", hash = "sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548" },
 ]
 
 [[package]]
 name = "ua-parser"
-version = "0.10.0"
+version = "0.16.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/ua_parser-0.10.0-py2.py3-none-any.whl", hash = "sha256:46ab2e383c01dbd2ab284991b87d624a26a08f72da4d7d413f5bfab8b9036f8a" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/ua_parser-0.16.1-py2.py3-none-any.whl", hash = "sha256:f97126300df8ac0f8f2c9d8559669532d626a1af529265fd253cba56e73ab36e" },
 ]
 
 [[package]]
@@ -2908,18 +3139,18 @@ wheels = [
 
 [[package]]
 name = "uritemplate"
-version = "4.1.1"
+version = "4.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/uritemplate-4.1.1-py2.py3-none-any.whl", hash = "sha256:830c08b8d99bdd312ea4ead05994a38e8936266f84b9a7878232db50b044e02e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/uritemplate-4.2.0-py3-none-any.whl", hash = "sha256:962201ba1c4edcab02e60f9a0d3821e82dfc5d2d6662a21abd533879bdb8a686" },
 ]
 
 [[package]]
 name = "urllib3"
-version = "2.2.2"
+version = "2.7.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/urllib3-2.2.2-py3-none-any.whl", hash = "sha256:a448b2f64d686155468037e1ace9f2d2199776e17f0a46610480d311f73e3472" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/urllib3-2.7.0-py3-none-any.whl", hash = "sha256:9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897" },
 ]
 
 [package.optional-dependencies]
@@ -2929,7 +3160,7 @@ socks = [
 
 [[package]]
 name = "virtualenv"
-version = "20.26.6"
+version = "20.36.1"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "distlib", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -2937,73 +3168,83 @@ dependencies = [
     { name = "platformdirs", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/virtualenv-20.26.6-py3-none-any.whl", hash = "sha256:7345cc5b25405607a624d8418154577459c3e0277f5466dd79c49d5e492995f2" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/virtualenv-20.36.1-py3-none-any.whl", hash = "sha256:575a8d6b124ef88f6f51d56d656132389f961062a9177016a50e4f507bbcc19f" },
 ]
 
 [[package]]
 name = "vroomrs"
-version = "0.1.19"
+version = "0.1.21"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.19-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:4df0e556dd3b9cba94442e5be182f5c2d602e8d3f044ed8d3f32cf45d6fab88f" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.19-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:333d445b25293ca3fdcfc5e8ed6bcb3bdb0918fcb08e9436045f49c9e0feaf44" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.19-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7880194c776bfb3b1b81faa4ec2bb846d2fc2c86eec1382b08ce01e4c0de4fd5" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.19-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e250a8320fea518bc7ae8307b9500c1220eec2679c472c6b6a754ccebbf05c6b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.21-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0240c7adc48b80a765af7a45b542b5371081fe96903422339756233a54f4754e" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.21-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5081dc76f0ff95cb63a1d170ebfb6f1a2cd3fc756a19817768451c86976d8971" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/vroomrs-0.1.21-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4fa0eb43a0eb708e7c0aadf49a6a33eefb073ab07644c1ddaad82d197b38d0cf" },
 ]
 
 [[package]]
 name = "werkzeug"
-version = "3.0.6"
+version = "3.1.6"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "markupsafe", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/werkzeug-3.0.6-py3-none-any.whl", hash = "sha256:1bc0c2310d2fbb07b1dd1105eba2f7af72f322e1e455f2f93c993bee8c8a5f17" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/werkzeug-3.1.6-py3-none-any.whl", hash = "sha256:7ddf3357bb9564e407607f988f683d72038551200c704012bb9a4c523d42f131" },
 ]
 
 [[package]]
 name = "wheel"
-version = "0.38.4"
+version = "0.46.3"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+dependencies = [
+    { name = "packaging", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
+]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/wheel-0.38.4-py3-none-any.whl", hash = "sha256:b60533f3f5d530e971d6737ca6d58681ee434818fab630c83a734bb10c083ce8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wheel-0.46.3-py3-none-any.whl", hash = "sha256:4b399d56c9d9338230118d705d9737a2a468ccca63d5e813e2a4fc7815d8bc4d" },
 ]
 
 [[package]]
 name = "wrapt"
-version = "1.17.0"
+version = "1.17.2"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:714c12485aa52efbc0fc0ade1e9ab3a70343db82627f90f2ecbc898fdf0bb181" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:da427d311782324a376cacb47c1a4adc43f99fd9d996ffc1b3e8529c4074d393" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.0-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e711fc1acc7468463bc084d1b68561e40d1eaa135d8c509a65dd534403d83d7b" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.0-py3-none-any.whl", hash = "sha256:d2c63b93548eda58abf5188e505ffed0229bf675f7c3090f8e36ad55b8cbc371" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:35621ae4c00e056adb0009f8e86e28eb4a41a4bfa8f9bfa9fca7d343fe94f998" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:a604bf7a053f8362d27eb9fefd2097f82600b856d5abe996d623babd067b1ab5" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5cbabee4f083b6b4cd282f5b817a867cf0b1028c54d445b7ec7cfe6505057cf8" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.2-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8112e52c5822fc4253f3901b676c55ddf288614dc7011634e2719718eaa187dc" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wrapt-1.17.2-py3-none-any.whl", hash = "sha256:b18f2d1533a71f069c7f82d524a52599053d4c7166e9dd374ae2136b7f40f7c8" },
 ]
 
 [[package]]
 name = "wsproto"
-version = "1.1.0"
+version = "1.2.0"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "h11", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/wsproto-1.1.0-py3-none-any.whl", hash = "sha256:2218cb57952d90b9fca325c0dcfb08c3bda93e8fd8070b0a17f048e2e47a521b" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/wsproto-1.2.0-py3-none-any.whl", hash = "sha256:b9acddd652b585d75b20477888c56642fdade28bdfd3579aa24a4d2c037dd736" },
 ]
 
 [[package]]
 name = "xmlsec"
-version = "1.3.14"
+version = "1.3.17"
 source = { registry = "https://pypi.devinfra.sentry.io/simple" }
 dependencies = [
     { name = "lxml", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.14-cp313-cp313-macosx_10_9_x86_64.whl", hash = "sha256:a9bcc10088375b5659d1b760e351f6e3dc63517433189e858aeb66d0e1cacf82" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.14-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:ccd9759b024a7a888f1896f752a1c913ce861df18a444adf3eaad562cf55cf70" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.14-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:042dbde8f487d31fe7d276382057f2e7172c4c39fb681b37a7a91c48febe4000" },
-    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.14-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:b5e132c98df6abd344336aeebdff5189c890113bcb5ee5f14e86f3ef37e90434" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.17-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:72fc6d336dd68d62822c6536ff4b2453fda94ea652eddb4a958ac97b16ac7001" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.17-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:ae88c3aaab5704adfdbce913b3a18db1eb96c49c970657cc01c0d1c420ffdec3" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/xmlsec-1.3.17-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:79b471fdd1d3a92b80907828eaa809f6e34023583488b1b8dc3f951529e7a2f8" },
+]
+
+[[package]]
+name = "zipp"
+version = "3.23.0"
+source = { registry = "https://pypi.devinfra.sentry.io/simple" }
+wheels = [
+    { url = "https://pypi.devinfra.sentry.io/wheels/zipp-3.23.0-py3-none-any.whl", hash = "sha256:071652d6115ed432f5ce1d34c336c0adfd6a884660d1e9712a256d3d3bd4b14e" },
 ]
 
 [[package]]
@@ -3018,4 +3259,7 @@ wheels = [
     { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:d68ff7c3a4c35400d807efbfa793767c2d4866a7017770b424e65749a70e958e" },
     { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e1ef5b96f0e90855ea13d06b7213a75a77a23946d8bb186ff38578dd1ff5efd4" },
     { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:754256fb4080a36f8992983b2f65f23719d275c9a350bcf18d76344ed64efa19" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:cdfe7ba070e4c13ca286494e0f3981a5deb0be0b3df84484399f2612bf8fd9ca" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_31_aarch64.whl", hash = "sha256:97efd8e7411354833c5c561c5b8b4c73fa9922c46b477229ae63318bc740afbd" },
+    { url = "https://pypi.devinfra.sentry.io/wheels/zstandard-0.18.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_31_x86_64.whl", hash = "sha256:f91b92f1f6f53f3c11539767d448b4dbf65bed61788d5f510eec5338d876687a" },
 ]
