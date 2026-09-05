@@ -32,10 +32,10 @@ jobs:
       backend_any_type: ${{ steps.changes.outputs.backend_any_type }}
       migration_lockfile: ${{ steps.changes.outputs.migration_lockfile }}
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Check for backend file changes
-        uses: dorny/paths-filter@0bc4621a3135347011ad047f9ecf449bf72ce2bd # v3.0.0
+        uses: dorny/paths-filter@0e4a8c6effa4802afeda77dc8d303f8176d7dfad # v3.0.4
         id: changes
         with:
           token: ${{ github.token }}
@@ -47,14 +47,14 @@ jobs:
     name: api docs test
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         id: setup-node
         with:
           node-version-file: '.node-version'
 
-      - uses: pnpm/action-setup@36de12bed180fa130ed56a35e7344f2fa7a820ab # v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
 
       - name: Setup sentry python env
         uses: ./.github/actions/setup-sentry
@@ -99,7 +99,7 @@ jobs:
       TEST_GROUP_STRATEGY: roundrobin
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -137,7 +137,7 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -163,7 +163,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -200,11 +200,11 @@ jobs:
           app_id: ${{ vars.SENTRY_INTERNAL_APP_ID }}
           private_key: ${{ secrets.SENTRY_INTERNAL_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - uses: astral-sh/setup-uv@884ad927a57e558e7a70b92f2bccf9198a4be546 # v6
         with:
-          version: '0.8.2'
+          version: '0.12.9'
 
       - uses: getsentry/action-setup-venv@5a80476d175edf56cb205b08bc58986fa99d1725 # v3.2.0
         with:
@@ -221,7 +221,7 @@ jobs:
 
       - name: apply any requirements changes
         if: steps.token.outcome == 'success' && github.ref != 'refs/heads/master' && always()
-        uses: getsentry/action-github-commit@31f6706ca1a7b9ad6d22c1b07bf3a92eabb05632 # v2.0.0
+        uses: getsentry/action-github-commit@5972d5f578ad77306063449e718c0c2a6fbc4ae1 # v2.1.0
         with:
           github-token: ${{ steps.token.outputs.token }}
           message: ':snowflake: re-freeze requirements'
@@ -239,7 +239,7 @@ jobs:
           app_id: ${{ vars.SENTRY_INTERNAL_APP_ID }}
           private_key: ${{ secrets.SENTRY_INTERNAL_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -252,7 +252,7 @@ jobs:
 
       - name: Apply any file changes
         if: github.ref != 'refs/heads/master' && always()
-        uses: getsentry/action-github-commit@31f6706ca1a7b9ad6d22c1b07bf3a92eabb05632 # v2.0.0
+        uses: getsentry/action-github-commit@5972d5f578ad77306063449e718c0c2a6fbc4ae1 # v2.1.0
         with:
           github-token: ${{ steps.token.outputs.token }}
           message: ':hammer_and_wrench: Sync API Urls to TypeScirpt'
@@ -265,7 +265,7 @@ jobs:
 
     steps:
       - name: Checkout sentry
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -297,7 +297,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
@@ -333,11 +333,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - uses: astral-sh/setup-uv@884ad927a57e558e7a70b92f2bccf9198a4be546 # v6
         with:
-          version: '0.8.2'
+          version: '0.12.9'
           # we just cache the venv-dir directly in action-setup-venv
           enable-cache: false
 
@@ -392,7 +392,7 @@ jobs:
           steps.regen-blocklist.outcome == 'success' &&
           github.ref != 'refs/heads/master' &&
           always()
-        uses: getsentry/action-github-commit@31f6706ca1a7b9ad6d22c1b07bf3a92eabb05632 # v2.0.0
+        uses: getsentry/action-github-commit@5972d5f578ad77306063449e718c0c2a6fbc4ae1 # v2.1.0
         with:
           github-token: ${{ steps.token.outputs.token }}
           message: ':knife: regenerate mypy module blocklist'
