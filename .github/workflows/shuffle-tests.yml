@@ -48,7 +48,7 @@ jobs:
       MATRIX_INSTANCE_TOTAL: 11
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Setup sentry env
         uses: ./.github/actions/setup-sentry
